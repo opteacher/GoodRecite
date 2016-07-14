@@ -29,7 +29,8 @@ public class ExitWdsTstCtrl extends ViewCtrl
 	{
 		ExitWdsTstBuilder.ins()
 				.setDlgSizeByScn(0, 0.4f)
-				.create().show();
+				.create()
+				.show();
 	}
 
 	@Override
@@ -68,13 +69,6 @@ public class ExitWdsTstCtrl extends ViewCtrl
 		//将单词测试Fragment推出栈（因为是通过对话框退出的，所以不存在强制退出判断）
 		activity.getFragmentManager().popBackStack();//用于退出测试底部按钮
 		activity.getFragmentManager().popBackStack();//用于退出测试主页面
-		for(int i = 0; i < activity.getFragmentManager().getBackStackEntryCount(); ++i)
-		{
-			Log.i("OP", "Fragment Backstack: " +
-					activity.getFragmentManager()
-							.getBackStackEntryAt(i)
-							.getBreadCrumbTitle());
-		}
 	}
 
 	private static ExitWdsTstCtrl instance = null;

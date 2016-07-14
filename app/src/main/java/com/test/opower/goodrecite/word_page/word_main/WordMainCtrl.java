@@ -23,8 +23,6 @@ import java.util.Map;
  */
 public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 {
-
-
 	public enum ViewType
 	{
 		WORD_MAIN, WORD_TEST, SELECT_WBOOK, SET_PLAN
@@ -75,19 +73,42 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		}
 	}
 
+	/***
+	 * 被Activity的HOME键和后退键按键事件所调用
+	 * @param pam 因为后退键会自动执行popBackStack和activity.finish，
+	 *            所以给出这个参数给HOME键做判断，是否强制执行后退逻辑
+	 */
+	@Override
+	public void popBackFragment(Object pam)
+	{
+		switch (vwType)
+		{
+		case WORD_MAIN:
+			WordMainCtrl.ins().popBackFragment();
+			break;
+		case WORD_TEST:
+			WordTestCtrl.ins().popBackFragment(pam);
+			break;
+		case SELECT_WBOOK:
+			SelWBookCtrl.ins().popBackFragment(pam);
+			break;
+		case SET_PLAN:
+			SetStudyPlanCtrl.ins().popBackFragment(pam);
+			break;
+		}
+	}
+
 	public void toCurFragment()
 	{
 		//将主界面替换成单词主界面
 		activity.getFragmentManager()
 				.beginTransaction()
-				.addToBackStack(null)
 				.replace(R.id.lytWdsCtt, WordMainFragment.ins())
 				.commit();
 
 		//替换底部按钮
 		activity.getFragmentManager()
 				.beginTransaction()
-				.addToBackStack(null)
 				.replace(R.id.lytWdsBtm, new BtmBtnFragment()
 						.setBtnId(R.id.btnWdsMnBtm)
 						.setBtnTxt(R.string.start_study)
@@ -197,31 +218,6 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		if(pam.containsKey(R.id.pnlWordStatistics))
 		{
 			wmp.setDayMission((Integer) pam.get(R.id.pnlWordStatistics));
-		}
-	}
-
-	/***
-	 * 被Activity的HOME键和后退键按键事件所调用
-	 * @param pam 因为后退键会自动执行popBackStack和activity.finish，
-	 *            所以给出这个参数给HOME键做判断，是否强制执行后退逻辑
-	 */
-	@Override
-	public void popBackFragment(Object pam)
-	{
-		switch (vwType)
-		{
-		case WORD_MAIN:
-			WordMainCtrl.ins().popBackFragment();
-			break;
-		case WORD_TEST:
-			WordTestCtrl.ins().popBackFragment(pam);
-			break;
-		case SELECT_WBOOK:
-			SelWBookCtrl.ins().popBackFragment(pam);
-			break;
-		case SET_PLAN:
-			SetStudyPlanCtrl.ins().popBackFragment(pam);
-			break;
 		}
 	}
 

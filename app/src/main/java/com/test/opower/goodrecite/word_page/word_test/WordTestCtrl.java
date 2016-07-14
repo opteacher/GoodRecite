@@ -46,13 +46,8 @@ public class WordTestCtrl extends ViewCtrl
 		toCurFragment();
 	}
 
-	public boolean isFirstWord()	{ return curWdIdx == 0; }
-
 	public void toCurFragment()
 	{
-		//获得底部按钮的引用
-		collectCtlFromView(null);
-
 		Map<String, WordInf> wdsSet = SessionData.ins().getWdsSet();
 		String curWd = getCurWord();
 
@@ -61,6 +56,14 @@ public class WordTestCtrl extends ViewCtrl
 			return;
 		}
 		WordInf wi = wdsSet.get(curWd);
+
+		//在做Fragment切换之前，需要先判断一下栈中有没有其他Test
+		//如果有，得先popBack出来
+		if(curWdIdx != 0)
+		{
+			activity.getFragmentManager().popBackStack();
+			activity.getFragmentManager().popBackStack();
+		}
 
 		//根据单词的熟悉度，跳转到指定的单词测试页面并改变当前页面的类型
 		switch (wi.familiarity)

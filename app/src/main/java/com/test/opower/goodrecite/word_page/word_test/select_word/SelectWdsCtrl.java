@@ -45,14 +45,6 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 		}
 		word = (String) pam;
 
-		//在做Fragment切换之前，需要先判断一下栈中有没有其他Test
-		//如果有，得先popBack出来，以保证当前Fragment是唯一存在的TestFragment
-		if(!WordTestCtrl.ins().isFirstWord())
-		{
-			activity.getFragmentManager().popBackStack();//内容
-			activity.getFragmentManager().popBackStack();//
-		}
-
 		//Fragment切换
 		activity.getFragmentManager()
 				.beginTransaction()

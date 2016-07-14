@@ -27,13 +27,6 @@ public class InputWdsCtrl extends ViewCtrl
 		}
 		word = (String) pam;
 
-		//在做Fragment切换之前，需要先判断一下栈中有没有其他Test
-		//如果有，得先popBack出来
-		if(!WordTestCtrl.ins().isFirstWord())
-		{
-			activity.getFragmentManager().popBackStack();
-		}
-
 		//Fragment切换
 		activity.getFragmentManager()
 				.beginTransaction()
