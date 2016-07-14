@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="tbrTop" type="id"/>
+	<item name="txtDlgTitle" type="id"/>
+	<item name="rgpDlgLst" type="id"/>
+	<item name="btnWdsMnBtm" type="id"/>
+	<item name="btnSelWbkBtm" type="id"/>
+	<item name="btnNxtWds" type="id"/>
+	<item name="btnSubAsr" type="id"/>
+</resources>

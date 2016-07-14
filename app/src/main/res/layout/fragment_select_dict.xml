@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shadow="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	shadow:z_depth="z_depth2"
+	shadow:z_depth_shape="rect"
+	shadow:z_depth_padding="z_depth2">
+
+	<ListView
+		android:id="@+id/lvwSelBk"
+		android:background="@android:color/white"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>

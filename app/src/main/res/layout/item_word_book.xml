@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_alignParentTop="true"
+		android:id="@+id/linearLayout">
+
+		<RadioButton
+			android:id="@+id/rdoSelDict"
+			android:text="test"
+			android:textSize="20sp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:layout_gravity="center_horizontal"
+			android:checked="false"/>
+
+		<TextView
+			android:id="@+id/txtNumWds"
+			android:text="test"
+			android:textSize="20sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_gravity="center_horizontal"/>
+	</LinearLayout>
+
+	<ProgressBar
+		android:id="@+id/pgsDownload"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/linearLayout"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
+		android:max="100"
+		android:visibility="gone"/>
+</RelativeLayout>

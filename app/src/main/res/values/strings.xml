@@ -1,0 +1,28 @@
+<resources>
+	<string name="app_name">GoodRecite</string>
+	<string name="start_study">开始学习单词</string>
+	<string name="start_dld_wb">开始下载单词本</string>
+	<string name="nxt_wds">下个单词</string>
+	<string name="sub_asr">提交选择</string>
+	<string name="shw_dtl">显示详细</string>
+	<string name="chk_asr">核对答案</string>
+	<string name="back_up">后退</string>
+	<string name="ensure">确定</string>
+	<string name="cancel">取消</string>
+	<string name="title">标题</string>
+	<string name="wng_alrdy_seled">选定的单词本已经下载并选定了</string>
+	<string name="wng_no_wbk_exs">未检测到选定的学习计划，请选定单词本后在操作</string>
+	<string name="wng_day_ex_all">每天学习的单词量超过的单词本的总数</string>
+	<string name="wng_no_wds_dif_rcd">没有查询到单词难度的记录</string>
+	<string name="wng_no_wds_imp_rcd">没有查询到单词重要度的记录</string>
+	<string name="wng_no_wds_example">没有查询到指定单词的例句</string>
+	<string name="err_not_rgt_cls">系统异常：类型配对错误</string>
+	<string name="err_no_such_opn">系统异常：没有对应的DB操作</string>
+	<string name="err_db_exe">系统异常：数据库操作错误</string>
+	<string name="err_db_data">系统异常：数据库中发现异常数据</string>
+	<string name="err_fm_service">系统异常：服务器调用失败</string>
+	<string name="err_sm_not_rdy">系统异常：相关参数未就绪</string>
+	<string name="err_param">系统错误：错误的参数（为空或者类型不对）</string>
+	<string name="err_inside">系统错误：内部数据发生异常</string>
+	<string name="info_wbk_dld_over">单词本下载完毕</string>
+</resources>

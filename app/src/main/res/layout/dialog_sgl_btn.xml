@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/txtDlgTitle"
+		android:text="@string/title"
+		android:textColor="@android:color/white"
+		android:textSize="20sp"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:paddingLeft="10dp"
+		android:gravity="center_vertical"
+		android:layout_alignParentTop="true"
+		android:background="@color/colorPrimary"/>
+
+	<com.test.opower.goodrecite.model.CstmBtn
+		android:id="@+id/btnEnsureDlg"
+		android:text="@string/ensure"
+		android:textSize="30sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:gravity="center"/>
+
+	<View
+		android:id="@+id/vwSplitCttBtn"
+		android:background="@android:color/darker_gray"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_above="@id/btnEnsureDlg"/>
+
+	<FrameLayout
+		android:id="@+id/lytDlgCtt"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/vwSplitCttBtn"
+		android:layout_below="@id/txtDlgTitle"
+		android:background="@color/colorBackground"/>
+</RelativeLayout>

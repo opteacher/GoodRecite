@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shadow="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	shadow:z_depth="z_depth2"
+	shadow:z_depth_shape="rect"
+	shadow:z_depth_padding="z_depth2">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:color/white">
+
+		<TextView
+			android:id="@+id/txtNewWord"
+			android:text="aaaa"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center"/>
+
+		<ImageButton
+			android:id="@+id/btnWdsSd"
+			android:src="@drawable/word_sounds"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_below="@id/txtNewWord"
+			android:layout_centerHorizontal="true"
+			android:scaleType="centerCrop"/>
+
+		<LinearLayout
+			android:id="@+id/lytWdsSet"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:orientation="horizontal">
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnSetWdsDif"
+				android:text="单词难度"
+				android:textSize="20sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:paddingLeft="20dp"
+				android:paddingTop="5dp"
+				android:paddingRight="20dp"
+				android:paddingBottom="5dp"
+				android:gravity="center"/>
+
+			<View
+				android:layout_width="1dp"
+				android:layout_height="match_parent"
+				android:background="@android:color/darker_gray" />
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnSetWdsImp"
+				android:text="单词重要度"
+				android:textSize="20sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:paddingLeft="20dp"
+				android:paddingTop="5dp"
+				android:paddingRight="20dp"
+				android:paddingBottom="5dp"
+				android:gravity="center"/>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_below="@id/lytWdsSet"
+			android:background="@android:color/darker_gray"/>
+	</RelativeLayout>
+</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>

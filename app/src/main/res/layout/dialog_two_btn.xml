@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/txtDlgTitle"
+		android:text="@string/title"
+		android:textColor="@android:color/white"
+		android:textSize="20sp"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:paddingLeft="10dp"
+		android:gravity="center_vertical"
+		android:layout_alignParentTop="true"
+		android:background="@color/colorPrimary"/>
+
+	<LinearLayout
+		android:id="@+id/lytDlgTwoBtn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true">
+
+		<com.test.opower.goodrecite.model.CstmBtn
+			android:id="@+id/btnEnsureDlg"
+			android:text="@string/ensure"
+			android:textSize="20sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:padding="5dp"/>
+
+		<View
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:background="@android:color/darker_gray"/>
+
+		<com.test.opower.goodrecite.model.CstmBtn
+			android:id="@+id/btnDismissDlg"
+			android:text="@string/cancel"
+			android:textSize="20sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:padding="5dp"/>
+	</LinearLayout>
+
+
+	<View
+		android:id="@+id/vwSplitCttBtn"
+		android:background="@android:color/darker_gray"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_above="@id/lytDlgTwoBtn"/>
+
+	<FrameLayout
+		android:id="@+id/lytDlgCtt"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/vwSplitCttBtn"
+		android:layout_below="@id/txtDlgTitle"
+		android:background="@color/colorBackground"/>
+</RelativeLayout>

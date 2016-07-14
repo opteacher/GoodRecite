@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shadow="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/colorBackground">
+
+	<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+		android:id="@+id/lytVfpAdv"
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:layout_alignParentTop="true"
+		shadow:z_depth="z_depth2"
+		shadow:z_depth_shape="rect"
+		shadow:z_depth_padding="z_depth2">
+
+		<ViewFlipper
+			android:id="@+id/vfpAdv"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:flipInterval="4000"/>
+	</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+
+	<LinearLayout
+		android:id="@+id/lytFstRow"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:layout_below="@id/lytVfpAdv"
+		android:orientation="horizontal">
+
+		<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			shadow:z_depth="z_depth2"
+			shadow:z_depth_shape="rect"
+			shadow:z_depth_padding="z_depth2">
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnMuRctWd"
+				android:text="背诵单词"
+				android:textSize="35sp"
+				android:background="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"/>
+		</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+
+		<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			shadow:z_depth="z_depth2"
+			shadow:z_depth_shape="rect"
+			shadow:z_depth_padding="z_depth2">
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnMuRdTrsf"
+				android:text="阅读理解"
+				android:textSize="35sp"
+				android:background="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"/>
+		</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/lytScdRow"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:layout_below="@id/lytFstRow"
+		android:orientation="horizontal">
+
+		<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			shadow:z_depth="z_depth2"
+			shadow:z_depth_shape="rect"
+			shadow:z_depth_padding="z_depth2">
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnMuRdyEx"
+				android:text="备考练习"
+				android:textSize="35sp"
+				android:background="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"/>
+		</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+
+		<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			shadow:z_depth="z_depth2"
+			shadow:z_depth_shape="rect"
+			shadow:z_depth_padding="z_depth2">
+
+			<com.test.opower.goodrecite.model.CstmBtn
+				android:id="@+id/btnMuStdSt"
+				android:text="学习统计"
+				android:textSize="35sp"
+				android:background="@android:color/white"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"/>
+		</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/btnMoreInf"
+		android:text="更多课程信息"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_alignParentBottom="true"/>
+</RelativeLayout>

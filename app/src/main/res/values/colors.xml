@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorAccent">#FF4081</color>
+	<color name="colorBackground">#CCCCCC</color>
+	<color name="colorSlideBar">#923EAE</color>
+	<color name="colorHigh">#FF0000</color>
+	<color name="colorLow">#00FF00</color>
+	<color name="colorError">#d9534f</color>
+	<color name="colorPass">#5cb85c</color>
+	<color name="colorClrBtn">#01A187</color>
+</resources>
