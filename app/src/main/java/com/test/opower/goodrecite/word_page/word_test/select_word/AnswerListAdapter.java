@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.test.opower.goodrecite.R;
+import com.test.opower.goodrecite.word_page.word_query.WordDetailCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class AnswerListAdapter extends BaseAdapter
 	public View getView(int i, View view, ViewGroup viewGroup)
 	{
 		ViewHolder vwHdr = null;
-		String txt = "";
+		String word = "";
 		if (view == null)
 		{
 			view = LayoutInflater.from(SelectWdsCtrl.ins().getActivity())
@@ -66,9 +67,9 @@ public class AnswerListAdapter extends BaseAdapter
 			vwHdr = new ViewHolder(
 					(Button) view.findViewById(R.id.btnWdsDtl),
 					(RadioButton) view.findViewById(R.id.rdoAnswer));
-			txt = lstAnswers.get(i);
-			vwHdr.rdo.setText(txt);
-			vwHdr.btn.setTag(txt);
+			word = lstAnswers.get(i);
+			vwHdr.rdo.setText(word);
+			vwHdr.btn.setTag(word);
 			view.setTag(vwHdr);
 		} else
 		{
@@ -83,7 +84,7 @@ public class AnswerListAdapter extends BaseAdapter
 			}
 			vwHdr.btn.setVisibility(View.VISIBLE);
 			view.findViewById(R.id.vwAsrSpln).setVisibility(View.VISIBLE);
-			if (txt == WordTestCtrl.ins().getCurWord())
+			if (word == WordTestCtrl.ins().getCurWord())
 			{
 				vwHdr.rdo.setChecked(true);
 			}
@@ -97,22 +98,23 @@ public class AnswerListAdapter extends BaseAdapter
 			{
 				for (int i = 0; i < vwGp.getChildCount(); ++i)
 				{
-					RadioButton rdo = (RadioButton) vwGp.getChildAt(i)
-							.findViewById(R.id.rdoAnswer);
-					rdo.setChecked(false);
+					((RadioButton) vwGp
+							.getChildAt(i)
+							.findViewById(R.id.rdoAnswer)).setChecked(true);
 				}
 				((RadioButton) view).setChecked(true);
 			}
 		});
+
+		final String wd = word;
 		vwHdr.btn.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View view)
 			{
-
+				WordDetailCtrl.ins().toCurFragment(wd);
 			}
 		});
-
 		return view;
 	}
 }

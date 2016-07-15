@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="20dp"
+		android:background="@android:color/white">
+
+		<LinearLayout
+			android:id="@+id/lytWdsExp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_marginBottom="20dp"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:text="@string/wds_exp"
+					android:textSize="10sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1"
+					android:paddingLeft="10dp"/>
+
+				<ImageButton
+					android:src="@drawable/option_hor"
+					android:layout_width="match_parent"
+					android:layout_height="30dp"
+					android:layout_weight="3"
+					android:scaleType="fitCenter"
+					android:background="@drawable/btn_color"/>
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginBottom="10dp"
+				android:background="@android:color/darker_gray"/>
+
+			<TextView
+				android:id="@+id/txtWdsExp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/lytWdsPhs"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_marginBottom="20dp"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:text="@string/wds_phs"
+					android:textSize="10sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_weight="1"
+					android:paddingLeft="10dp"/>
+
+				<ImageButton
+					android:src="@drawable/option_hor"
+					android:layout_width="match_parent"
+					android:layout_height="30dp"
+					android:layout_weight="3"
+					android:scaleType="fitCenter"
+					android:background="@drawable/btn_color"/>
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginBottom="10dp"
+				android:background="@android:color/darker_gray"/>
+
+			<TextView
+				android:id="@+id/txtWdsPhs"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+	</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

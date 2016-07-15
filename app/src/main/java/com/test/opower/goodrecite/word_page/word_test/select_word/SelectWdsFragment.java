@@ -21,7 +21,7 @@ public class SelectWdsFragment extends Fragment
 	{
 		View vw = inflater.inflate(R.layout.fragment_select_word, container, false);
 
-		SelectWdsCtrl.ins().bindMainContent(vw);
+		SelectWdsCtrl.ins().setDataToView(vw);
 
 		return vw;
 	}

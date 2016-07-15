@@ -9,6 +9,7 @@
 	<string name="back_up">后退</string>
 	<string name="ensure">确定</string>
 	<string name="cancel">取消</string>
+	<string name="close">关闭</string>
 	<string name="title">标题</string>
 	<string name="wng_alrdy_seled">选定的单词本已经下载并选定了</string>
 	<string name="wng_no_wbk_exs">未检测到选定的学习计划，请选定单词本后在操作</string>
@@ -16,6 +17,7 @@
 	<string name="wng_no_wds_dif_rcd">没有查询到单词难度的记录</string>
 	<string name="wng_no_wds_imp_rcd">没有查询到单词重要度的记录</string>
 	<string name="wng_no_wds_example">没有查询到指定单词的例句</string>
+	<string name="wng_no_wds_rcd">没有找到该单词的词典信息</string>
 	<string name="err_not_rgt_cls">系统异常：类型配对错误</string>
 	<string name="err_no_such_opn">系统异常：没有对应的DB操作</string>
 	<string name="err_db_exe">系统异常：数据库操作错误</string>
@@ -25,4 +27,12 @@
 	<string name="err_param">系统错误：错误的参数（为空或者类型不对）</string>
 	<string name="err_inside">系统错误：内部数据发生异常</string>
 	<string name="info_wbk_dld_over">单词本下载完毕</string>
+	<string name="plus">+</string>
+	<string name="wds_image">联想</string>
+	<string name="wds_trsl">解释</string>
+	<string name="wds_exp">例句</string>
+	<string name="wds_phs">短语</string>
+	<string name="wds_am_sd">美【SOUND】</string>
+	<string name="wds_en_sd">英【SOUND】</string>
+	<string name="wds_sd">SOUND</string>
 </resources>

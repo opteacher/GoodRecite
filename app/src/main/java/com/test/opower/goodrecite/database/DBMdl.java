@@ -27,6 +27,7 @@ public class DBMdl
 	public static final int SELECT_WORD_EXP_PHS = 12;
 	public static final int SELECT_WORD_NEAR_FM_SY = 13;
 	public static final int SELECT_WORD_NEAR = 14;
+	public static final int SELECT_WORD_DETAIL = 15;
 
 	private DBMdl()
 	{
@@ -45,6 +46,7 @@ public class DBMdl
 		dbOpnTbl.put(SELECT_WORD_EXP_PHS, DBOpnSelWdsExpPhs.ins());
 		dbOpnTbl.put(SELECT_WORD_NEAR_FM_SY, DBOpnSelWdsNrFmSy.ins());
 		dbOpnTbl.put(SELECT_WORD_NEAR, DBOpnSelWdsNear.ins());
+		dbOpnTbl.put(SELECT_WORD_DETAIL, DBOpnSelWdsDtl.ins());
 	}
 	private static DBMdl instance = new DBMdl();
 	public static DBMdl ins()	{ return instance; }

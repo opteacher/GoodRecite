@@ -18,6 +18,7 @@ import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by opower on 16-7-1.
@@ -29,6 +30,7 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 	private ListView lstAnswers = null;
 	private TextView txtWdsQuest = null;
 	private TextView txtQuestTrsl = null;
+	private View vwSplitSelWdsTsf = null;
 
 	private SelectWdsCtrl(BaseActivity act)
 	{
@@ -64,9 +66,9 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 	}
 
 	@Override
-	public void bindMainContent(View vw)
+	public void setDataToView(View vw)
 	{
-		//从页面该上收集控件
+		//收集控件
 		collectCtlFromView(vw);
 
 		//从数据库中取得例句和短语作为问题
@@ -135,6 +137,8 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 				{
 					//将显示答案标志设为true
 					showAnswer = true;
+					//将问题原题和翻译之间的分割线显示出来
+					vwSplitSelWdsTsf.setVisibility(View.VISIBLE);
 					//将问题的翻译显示出来
 					txtQuestTrsl.setVisibility(View.VISIBLE);
 					//遍历答案列表，显示选择是否正确，并显示各个选项对应单词的详细链接
@@ -199,6 +203,7 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 		lstAnswers = (ListView) vw.findViewById(R.id.lstAnswers);
 		txtWdsQuest = (TextView) vw.findViewById(R.id.txtWdsQuest);
 		txtQuestTrsl = (TextView) vw.findViewById(R.id.txtQuestTrsl);
+		vwSplitSelWdsTsf = vw.findViewById(R.id.vwSplitSelWdsTsf);
 	}
 
 	@Override

@@ -44,6 +44,7 @@ public class BtmBtnFragment extends Fragment
 			btnWdsBtm = new CstmBtn(getActivity());
 			btnWdsBtm.setId(id);
 			btnWdsBtm.setText(txt);
+			btnWdsBtm.setTextSize(30);
 			btnWdsBtm.setLayoutParams(new ViewGroup.LayoutParams(
 					ViewGroup.LayoutParams.MATCH_PARENT,
 					ViewGroup.LayoutParams.MATCH_PARENT));

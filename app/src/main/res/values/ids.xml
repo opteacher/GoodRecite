@@ -7,4 +7,5 @@
 	<item name="btnSelWbkBtm" type="id"/>
 	<item name="btnNxtWds" type="id"/>
 	<item name="btnSubAsr" type="id"/>
+	<item name="btnClsDtl" type="id"/>
 </resources>

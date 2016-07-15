@@ -13,6 +13,7 @@ import com.test.opower.goodrecite.model.CstmBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.select_wbook.SelWBookCtrl;
 import com.test.opower.goodrecite.word_page.set_study_plan.SetStudyPlanCtrl;
+import com.test.opower.goodrecite.word_page.word_query.WordDetailCtrl;
 import com.test.opower.goodrecite.word_page.word_test.ExitWdsTstCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
@@ -40,6 +41,7 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		WordTestCtrl.ini(act);
 		SetStudyPlanCtrl.ini(act);
 		ExitWdsTstCtrl.ini(act);
+		WordDetailCtrl.ini(act);
 	}
 
 	/***
