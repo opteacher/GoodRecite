@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.test.opower.goodrecite.R;
+import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
 import com.test.opower.goodrecite.word_page.word_query.WordDetailCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
@@ -98,9 +99,8 @@ public class AnswerListAdapter extends BaseAdapter
 			{
 				for (int i = 0; i < vwGp.getChildCount(); ++i)
 				{
-					((RadioButton) vwGp
-							.getChildAt(i)
-							.findViewById(R.id.rdoAnswer)).setChecked(true);
+					((RadioButton) vwGp.getChildAt(i)
+							.findViewById(R.id.rdoAnswer)).setChecked(false);
 				}
 				((RadioButton) view).setChecked(true);
 			}
@@ -112,7 +112,11 @@ public class AnswerListAdapter extends BaseAdapter
 			@Override
 			public void onClick(View view)
 			{
-				WordDetailCtrl.ins().toCurFragment(wd);
+				WordMainCtrl.FgtTrsInfo fti = new WordMainCtrl.FgtTrsInfo();
+				fti.vt = WordMainCtrl.ViewType.WORD_DETAIL;
+				fti.subPam = new WordDetailCtrl.FgtTrsInfo(
+						WordMainCtrl.ViewType.WORD_TEST, wd);
+				WordMainCtrl.ins().toCurFragment(fti);
 			}
 		});
 		return view;
