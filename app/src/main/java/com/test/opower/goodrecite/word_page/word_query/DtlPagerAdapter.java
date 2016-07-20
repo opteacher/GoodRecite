@@ -1,13 +1,19 @@
 package com.test.opower.goodrecite.word_page.word_query;
 
+import android.graphics.Point;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.test.opower.goodrecite.R;
+import com.test.opower.goodrecite.common_utils.CmnUtils;
 import com.test.opower.goodrecite.database.DBOpnSelWdsDtl;
+import com.test.opower.goodrecite.model.BaseActivity;
 
 import org.w3c.dom.Text;
 
@@ -21,6 +27,24 @@ class DtlPagerAdapter extends PagerAdapter
 {
 	private List<String> title = null;
 	private List<View> contents = null;
+	private TextView txtWdsTrsf = null;
+	private LinearLayout lytWdsExp = null;
+	private ImageButton btnWdsImgOpn = null;
+	private TextView txtWdsExp = null;
+	private LinearLayout lytWdsPhs = null;
+	private TextView txtWdsPhs = null;
+	private LinearLayout lytWdsNrFm = null;
+	private TextView txtWdsNrFm = null;
+	private LinearLayout lytWdsNrSy = null;
+	private TextView txtWdsNrSy = null;
+	private LinearLayout lytWdsMuli = null;
+	private TextView txtWdsMuli = null;
+	private LinearLayout lytWdsPsnt = null;
+	private TextView txtWdsPsnt = null;
+	private LinearLayout lytWdsPast = null;
+	private TextView txtWdsPast = null;
+	private LinearLayout lytWdsDone = null;
+	private TextView txtWdsDone = null;
 
 	public DtlPagerAdapter(LayoutInflater inflater, DBOpnSelWdsDtl.ExeRst info)
 	{
@@ -30,67 +54,110 @@ class DtlPagerAdapter extends PagerAdapter
 		title.add("相关");
 
 		View vw = null;
-		TextView txt = null;
 
 		contents = new ArrayList<>();
+
 		vw = inflater.inflate(R.layout.item_word_dtl_trsl, null);
-		((TextView) vw.findViewById(R.id.txtWdsTrsf))
-				.setText(info.trs.replace("|", "\n\n"));
+		collectCtlFromTrs(vw);
+		txtWdsTrsf.setText(info.trs.replace("|", "\n\n"));
 		contents.add(vw);
 
 		vw = inflater.inflate(R.layout.item_word_dtl_exp, null);
+		collectCtlFromExp(vw);
 		if(!info.exp.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsExp);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.exp.replace("|", "\n\n"));
+			lytWdsExp.setVisibility(View.VISIBLE);
+			txtWdsExp.setText(info.exp.replace("|", "\n\n"));
 		}
 		if(!info.phs.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsPhs);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.phs.replace("|", "\n\n"));
+			lytWdsPhs.setVisibility(View.VISIBLE);
+			txtWdsPhs.setText(info.phs.replace("|", "\n\n"));
 		}
 		contents.add(vw);
 
 		vw = inflater.inflate(R.layout.item_word_dtl_rel, null);
+		collectCtlFromRel(vw);
 		if(!info.nrFm.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsNrFm);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.nrFm.replace('|', ','));
+			lytWdsNrFm.setVisibility(View.VISIBLE);
+			txtWdsNrFm.setText(info.nrFm.replace('|', ','));
 		}
 		if(!info.nrSy.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsNrSy);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.nrSy.replace('|', ','));
+			lytWdsNrSy.setVisibility(View.VISIBLE);
+			txtWdsNrSy.setText(info.nrSy.replace('|', ','));
 		}
 		if(!info.muli.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsMuli);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.muli);
+			lytWdsMuli.setVisibility(View.VISIBLE);
+			txtWdsMuli.setText(info.muli);
 		}
 		if(!info.psnt.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsPsnt);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.psnt);
+			lytWdsPsnt.setVisibility(View.VISIBLE);
+			txtWdsPsnt.setText(info.psnt);
 		}
 		if(!info.past.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsPast);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.past);
+			lytWdsPast.setVisibility(View.VISIBLE);
+			txtWdsPast.setText(info.past);
 		}
 		if(!info.done.isEmpty())
 		{
-			txt = (TextView) vw.findViewById(R.id.txtWdsDone);
-			txt.setVisibility(View.VISIBLE);
-			txt.setText(info.done);
+			lytWdsDone.setVisibility(View.VISIBLE);
+			txtWdsDone.setText(info.done);
 		}
 		contents.add(vw);
+	}
+
+	private void collectCtlFromTrs(View vw)
+	{
+		txtWdsTrsf = (TextView) vw.findViewById(R.id.txtWdsTrsf);
+		btnWdsImgOpn = (ImageButton) vw.findViewById(R.id.btnWdsImgOpn);
+	}
+
+	private void collectCtlFromExp(View vw)
+	{
+		lytWdsExp = (LinearLayout) vw.findViewById(R.id.lytWdsExp);
+		txtWdsExp = (TextView) vw.findViewById(R.id.txtWdsExp);
+		lytWdsPhs = (LinearLayout) vw.findViewById(R.id.lytWdsPhs);
+		txtWdsPhs = (TextView) vw.findViewById(R.id.txtWdsPhs);
+	}
+
+	private void collectCtlFromRel(View vw)
+	{
+		lytWdsNrFm = (LinearLayout) vw.findViewById(R.id.lytWdsNrFm);
+		txtWdsNrFm = (TextView) vw.findViewById(R.id.txtWdsNrFm);
+		lytWdsNrSy = (LinearLayout) vw.findViewById(R.id.lytWdsNrSy);
+		txtWdsNrSy = (TextView) vw.findViewById(R.id.txtWdsNrSy);
+		lytWdsMuli = (LinearLayout) vw.findViewById(R.id.lytWdsMuli);
+		txtWdsMuli = (TextView) vw.findViewById(R.id.txtWdsMuli);
+		lytWdsPsnt = (LinearLayout) vw.findViewById(R.id.lytWdsPsnt);
+		txtWdsPsnt = (TextView) vw.findViewById(R.id.txtWdsPsnt);
+		lytWdsPast = (LinearLayout) vw.findViewById(R.id.lytWdsPast);
+		txtWdsPast = (TextView) vw.findViewById(R.id.txtWdsPast);
+		lytWdsDone = (LinearLayout) vw.findViewById(R.id.lytWdsDone);
+		txtWdsDone = (TextView) vw.findViewById(R.id.txtWdsDone);
+	}
+
+	public void bindMainContent(final BaseActivity act, final String word)
+	{
+		//设置单词联想选项按钮
+		btnWdsImgOpn.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				OpenWdsImgCtrl.DlgCrtePam dcp = new OpenWdsImgCtrl.DlgCrtePam();
+				dcp.word = word;
+				Point vwPos = CmnUtils.getVwLocOnAct(view, act);
+				dcp.width = 400;
+				dcp.x = vwPos.x - dcp.width;
+				dcp.y = vwPos.y;
+				OpenWdsImgCtrl.ins().toCurFragment(dcp);
+			}
+		});
 	}
 
 	@Override

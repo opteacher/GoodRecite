@@ -8,109 +8,148 @@
 
 	<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="wrap_content"
 		shadow:z_depth="z_depth2"
 		shadow:z_depth_shape="rect"
 		shadow:z_depth_padding="z_depth2">
 
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:background="@android:color/white">
+
+			<LinearLayout
+				android:id="@id/lytWdsSet"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<com.test.opower.goodrecite.model.CstmBtn
+					android:id="@id/btnSetWdsDif"
+					android:text="单词难度"
+					android:textSize="20sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:paddingLeft="20dp"
+					android:paddingTop="5dp"
+					android:paddingRight="20dp"
+					android:paddingBottom="5dp"
+					android:gravity="center"/>
+
+				<View
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:background="@android:color/darker_gray" />
+
+				<com.test.opower.goodrecite.model.CstmBtn
+					android:id="@id/btnSetWdsImp"
+					android:text="单词重要度"
+					android:textSize="20sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:paddingLeft="20dp"
+					android:paddingTop="5dp"
+					android:paddingRight="20dp"
+					android:paddingBottom="5dp"
+					android:gravity="center"/>
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@android:color/darker_gray"
+				android:layout_marginBottom="10dp"/>
+
+			<!--word-->
+			<TextView
+				android:id="@+id/txtWord"
+				android:text="abcd"
+				android:textSize="30sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_alignParentTop="true"/>
+
+			<!--sounds-->
+			<LinearLayout
+				android:id="@+id/lytWdsSds"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:gravity="center_horizontal"
+				android:layout_below="@id/txtWord">
+
+				<TextView
+					android:id="@+id/txtWdsAmSd"
+					android:text="@string/wds_am_sd"
+					android:textSize="10sp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"/>
+
+				<ImageButton
+					android:id="@+id/imgWdsAmSd"
+					android:src="@drawable/word_sounds"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:scaleType="centerCrop"/>
+
+				<View
+					android:layout_width="30dp"
+					android:layout_height="30dp"/>
+
+				<TextView
+					android:id="@+id/txtWdsEnSd"
+					android:text="@string/wds_en_sd"
+					android:textSize="10sp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"/>
+
+				<ImageButton
+					android:id="@+id/imgWdsEnSd"
+					android:src="@drawable/word_sounds"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_gravity="center"
+					android:scaleType="centerCrop"/>
+			</LinearLayout>
+		</LinearLayout>
+	</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
+
+	<app.mosn.zdepthshadowlayout.ZDepthShadowLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		shadow:z_depth="z_depth2"
+		shadow:z_depth_shape="rect"
+		shadow:z_depth_padding="z_depth2">
+
+		<!--detail-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:background="@android:color/white">
+
+			<android.support.design.widget.TabLayout
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+				android:id="@+id/lytWdsDtl"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/colorPrimary"
+				app:tabIndicatorColor="@android:color/white"
+				app:tabTextColor="@android:color/white"
+				app:tabSelectedTextColor="@android:color/white"
+				app:tabMode="fixed"/>
+
+			<android.support.v4.view.ViewPager
+				android:id="@+id/vpgWdsDtl"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
 	</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>
 </LinearLayout>
-
-<!--<app.mosn.zdepthshadowlayout.ZDepthShadowLayout-->
-	<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-	<!--xmlns:shadow="http://schemas.android.com/apk/res-auto"-->
-	<!--android:layout_width="match_parent"-->
-	<!--android:layout_height="match_parent"-->
-	<!--shadow:z_depth="z_depth2"-->
-	<!--shadow:z_depth_shape="rect"-->
-	<!--shadow:z_depth_padding="z_depth2">-->
-
-	<!--<RelativeLayout-->
-		<!--android:layout_width="match_parent"-->
-		<!--android:layout_height="match_parent"-->
-		<!--android:background="@android:color/white">-->
-
-		<!--&lt;!&ndash;word&ndash;&gt;-->
-		<!--<TextView-->
-			<!--android:id="@+id/txtWord"-->
-			<!--android:text="abcd"-->
-			<!--android:textSize="30sp"-->
-			<!--android:layout_width="match_parent"-->
-			<!--android:layout_height="wrap_content"-->
-			<!--android:gravity="center_horizontal"-->
-			<!--android:layout_alignParentTop="true"/>-->
-
-		<!--&lt;!&ndash;sounds&ndash;&gt;-->
-		<!--<LinearLayout-->
-			<!--android:id="@+id/lytWdsSds"-->
-			<!--android:layout_width="match_parent"-->
-			<!--android:layout_height="wrap_content"-->
-			<!--android:orientation="horizontal"-->
-			<!--android:gravity="center_horizontal"-->
-			<!--android:layout_below="@id/txtWord">-->
-
-			<!--<TextView-->
-				<!--android:id="@+id/txtWdsAmSd"-->
-				<!--android:text="@string/wds_am_sd"-->
-				<!--android:textSize="10sp"-->
-				<!--android:layout_width="wrap_content"-->
-				<!--android:layout_height="wrap_content"-->
-				<!--android:layout_gravity="center"/>-->
-
-			<!--<ImageButton-->
-				<!--android:id="@+id/imgWdsAmSd"-->
-				<!--android:src="@drawable/word_sounds"-->
-				<!--android:layout_width="30dp"-->
-				<!--android:layout_height="30dp"-->
-				<!--android:layout_gravity="center"-->
-				<!--android:scaleType="centerCrop"/>-->
-
-			<!--<View-->
-				<!--android:layout_width="30dp"-->
-				<!--android:layout_height="30dp"/>-->
-
-			<!--<TextView-->
-				<!--android:id="@+id/txtWdsEnSd"-->
-				<!--android:text="@string/wds_en_sd"-->
-				<!--android:textSize="10sp"-->
-				<!--android:layout_width="wrap_content"-->
-				<!--android:layout_height="wrap_content"-->
-				<!--android:layout_gravity="center"/>-->
-			<!--<ImageButton-->
-				<!--android:id="@+id/imgWdsEnSd"-->
-				<!--android:src="@drawable/word_sounds"-->
-				<!--android:layout_width="30dp"-->
-				<!--android:layout_height="30dp"-->
-				<!--android:layout_gravity="center"-->
-				<!--android:scaleType="centerCrop"/>-->
-		<!--</LinearLayout>-->
-
-		<!--&lt;!&ndash;detail&ndash;&gt;-->
-		<!--<RelativeLayout-->
-			<!--android:layout_width="match_parent"-->
-			<!--android:layout_height="match_parent"-->
-			<!--android:layout_marginLeft="20dp"-->
-			<!--android:layout_marginRight="20dp"-->
-			<!--android:layout_marginBottom="5dp"-->
-			<!--android:layout_below="@id/lytWdsSds">-->
-
-			<!--<android.support.design.widget.TabLayout-->
-				<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-				<!--android:id="@+id/lytWdsDtl"-->
-				<!--android:layout_width="match_parent"-->
-				<!--android:layout_height="wrap_content"-->
-				<!--android:layout_alignParentTop="true"-->
-				<!--android:background="@color/colorPrimary"-->
-				<!--app:tabIndicatorColor="@android:color/white"-->
-				<!--app:tabTextColor="@android:color/white"-->
-				<!--app:tabSelectedTextColor="@android:color/white"-->
-				<!--app:tabMode="fixed"/>-->
-
-			<!--<android.support.v4.view.ViewPager-->
-				<!--android:id="@+id/vpgDtl"-->
-				<!--android:layout_below="@id/lytWdsDtl"-->
-				<!--android:layout_width="match_parent"-->
-				<!--android:layout_height="match_parent"/>-->
-		<!--</RelativeLayout>-->
-	<!--</RelativeLayout>-->
-<!--</app.mosn.zdepthshadowlayout.ZDepthShadowLayout>-->

@@ -26,6 +26,7 @@ public class NewWdsFragment extends Fragment
 
 		//调用控制器的绑定
 		NewWdsCtrl.ins().bindMainContent(vw);
+		NewWdsCtrl.ins().setDataToView(vw);
 
 		//利用屏幕宽度算出字体的大小（尽量占满屏幕宽度）
 		String wd = NewWdsCtrl.ins().getWord();

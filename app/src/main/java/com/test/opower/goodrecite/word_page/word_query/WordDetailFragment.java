@@ -24,6 +24,7 @@ public class WordDetailFragment extends Fragment
 		View vw = inflater.inflate(R.layout.fragment_word_detail, container, false);
 		WordDetailCtrl.ins().collectCtlFromView(vw);
 		WordDetailCtrl.ins().setDataToView(vw);
+		WordDetailCtrl.ins().bindMainContent(vw);
 		return vw;
 	}
 }

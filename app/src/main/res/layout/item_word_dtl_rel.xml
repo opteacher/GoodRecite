@@ -10,7 +10,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:padding="20dp"
+		android:padding="10dp"
 		android:background="@android:color/white">
 
 		<LinearLayout
@@ -18,7 +18,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -28,7 +27,7 @@
 
 				<TextView
 					android:text="近形词"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -36,10 +35,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
-					android:layout_weight="3"
+					android:layout_weight="5"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -53,7 +54,8 @@
 			<TextView
 				android:id="@+id/txtWdsNrFm"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -61,7 +63,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -71,7 +72,7 @@
 
 				<TextView
 					android:text="近义词"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -79,10 +80,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
-					android:layout_weight="3"
+					android:layout_weight="5"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -96,7 +99,8 @@
 			<TextView
 				android:id="@+id/txtWdsNrSy"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -104,7 +108,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -114,7 +117,7 @@
 
 				<TextView
 					android:text="复数形式"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -122,10 +125,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
-					android:layout_weight="3"
+					android:layout_weight="5"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -139,7 +144,8 @@
 			<TextView
 				android:id="@+id/txtWdsMuli"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -147,7 +153,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -157,7 +162,7 @@
 
 				<TextView
 					android:text="现在分词"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -165,10 +170,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
-					android:layout_weight="3"
+					android:layout_weight="5"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -182,7 +189,8 @@
 			<TextView
 				android:id="@+id/txtWdsPsnt"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -190,7 +198,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -200,7 +207,7 @@
 
 				<TextView
 					android:text="过去式"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -208,10 +215,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
-					android:layout_weight="3"
+					android:layout_weight="5"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -225,7 +234,8 @@
 			<TextView
 				android:id="@+id/txtWdsPast"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -233,7 +243,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginBottom="20dp"
 			android:visibility="gone">
 
 			<LinearLayout
@@ -243,7 +252,7 @@
 
 				<TextView
 					android:text="过去分词"
-					android:textSize="10sp"
+					android:textSize="15sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
@@ -251,10 +260,12 @@
 					android:paddingLeft="10dp"/>
 
 				<ImageButton
-					android:src="@drawable/option_hor"
+					android:src="@drawable/option_ver"
 					android:layout_width="match_parent"
-					android:layout_height="30dp"
+					android:layout_height="20dp"
 					android:layout_weight="3"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:scaleType="fitCenter"
 					android:background="@drawable/btn_color"/>
 			</LinearLayout>
@@ -268,7 +279,8 @@
 			<TextView
 				android:id="@+id/txtWdsDone"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"/>
+				android:layout_height="wrap_content"
+				android:padding="10dp"/>
 		</LinearLayout>
 	</LinearLayout>
 </android.support.v4.widget.NestedScrollView>

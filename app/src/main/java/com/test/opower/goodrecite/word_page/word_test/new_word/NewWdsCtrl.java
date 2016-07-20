@@ -18,8 +18,10 @@ import com.test.opower.goodrecite.model.BtmBtnFragment;
 import com.test.opower.goodrecite.model.CstmBtn;
 import com.test.opower.goodrecite.model.RdoGrpDlgBuilder;
 import com.test.opower.goodrecite.model.ViewCtrl;
+import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
 import com.test.opower.goodrecite.word_page.word_query.SetWdsInfCtrl;
 import com.test.opower.goodrecite.word_page.word_query.SetWdsInfCtrl.DlgCrtePam;
+import com.test.opower.goodrecite.word_page.word_query.WordDetailCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
 /**
@@ -92,7 +94,11 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 			@Override
 			public void onClick(View view)
 			{
-
+				WordMainCtrl.FgtTrsInfo fti = new WordMainCtrl.FgtTrsInfo();
+				fti.vt = WordMainCtrl.ViewType.WORD_DETAIL;
+				fti.subPam = new WordDetailCtrl.FgtTrsInfo(
+						WordMainCtrl.ViewType.WORD_TEST, word);
+				WordMainCtrl.ins().toCurFragment(fti);
 			}
 		});
 
@@ -105,22 +111,6 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 
 			}
 		});
-
-		int opnMsg = 0;
-
-		//设置单词难度按钮上的小圆颜色
-		DBOpnSelWdsDifClr.ExeRst difClr = new DBOpnSelWdsDifClr.ExeRst();
-		DBMdl.ins().begOperation(DBMdl.SELECT_WORD_DIFF_CLR, null, null);
-		opnMsg = DBMdl.ins().exeOperation(word, difClr);
-		if(opnMsg != 0)
-		{
-			Toast.makeText(getActivity(), opnMsg, Toast.LENGTH_SHORT).show();
-		}
-		else
-		{
-			dblClrCclOfWdsDif.getPaint().setColor(difClr.difClr);
-		}
-		btnSetWdsDif.setCompoundDrawables(dblClrCclOfWdsDif, null, null, null);
 
 		//设置单词的难度
 		btnSetWdsDif.setOnClickListener(new CstmBtn.OnClickListener()
@@ -142,20 +132,6 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 			}
 		});
 
-		//设置单词重要度按钮上的小圆颜色
-		DBOpnSelWdsImpClr.ExeRst impClr = new DBOpnSelWdsImpClr.ExeRst();
-		DBMdl.ins().begOperation(DBMdl.SELECT_WORD_IMPT_CLR, null, null);
-		opnMsg = DBMdl.ins().exeOperation(word, impClr);
-		if(opnMsg != 0)
-		{
-			Toast.makeText(getActivity(), opnMsg, Toast.LENGTH_SHORT).show();
-		}
-		else
-		{
-			dblClrCclOfWdsImp.getPaint().setColor(impClr.impClr);
-		}
-		btnSetWdsImp.setCompoundDrawables(dblClrCclOfWdsImp, null, null, null);
-
 		//设置单词的重要度
 		btnSetWdsImp.setOnClickListener(new CstmBtn.OnClickListener()
 		{
@@ -175,6 +151,40 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 				dcp.reset();
 			}
 		});
+	}
+
+	@Override
+	public void setDataToView(View vw)
+	{
+		int opnMsg = 0;
+
+		//设置单词难度按钮上的小圆颜色
+		DBOpnSelWdsDifClr.ExeRst difClr = new DBOpnSelWdsDifClr.ExeRst();
+		DBMdl.ins().begOperation(DBMdl.SELECT_WORD_DIFF_CLR, null, null);
+		opnMsg = DBMdl.ins().exeOperation(word, difClr);
+		if(opnMsg != 0)
+		{
+			Toast.makeText(getActivity(), opnMsg, Toast.LENGTH_SHORT).show();
+		}
+		else
+		{
+			dblClrCclOfWdsDif.getPaint().setColor(difClr.difClr);
+		}
+		btnSetWdsDif.setCompoundDrawables(dblClrCclOfWdsDif, null, null, null);
+
+		//设置单词重要度按钮上的小圆颜色
+		DBOpnSelWdsImpClr.ExeRst impClr = new DBOpnSelWdsImpClr.ExeRst();
+		DBMdl.ins().begOperation(DBMdl.SELECT_WORD_IMPT_CLR, null, null);
+		opnMsg = DBMdl.ins().exeOperation(word, impClr);
+		if(opnMsg != 0)
+		{
+			Toast.makeText(getActivity(), opnMsg, Toast.LENGTH_SHORT).show();
+		}
+		else
+		{
+			dblClrCclOfWdsImp.getPaint().setColor(impClr.impClr);
+		}
+		btnSetWdsImp.setCompoundDrawables(dblClrCclOfWdsImp, null, null, null);
 	}
 
 	@Override

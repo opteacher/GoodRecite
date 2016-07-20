@@ -70,9 +70,6 @@ public class SelWBookFragment extends Fragment
 		lvwSelBk = (ListView) vw.findViewById(R.id.lvwSelBk);
 		lvwSelBk.setAdapter(SelWBookAdapter.ins());
 
-		//绑定底部Button的按键事件
-		SelWBookCtrl.ins().bindBtmButton(null);
-
 		return vw;
 	}
 }

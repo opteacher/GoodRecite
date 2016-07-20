@@ -72,8 +72,7 @@ public class SetWdsInfCtrl extends ViewCtrl
 		}
 
 		//取得参数并获得当前单词
-		DlgCrtePam dcp = (CmnUtils.isCls(pam, DlgCrtePam.class)) ?
-				(DlgCrtePam) pam : null;
+		DlgCrtePam dcp = (CmnUtils.isCls(pam, DlgCrtePam.class)) ? (DlgCrtePam) pam : null;
 		word = dcp.word;
 		btnSetWdsInf = dcp.btn;
 
@@ -118,7 +117,8 @@ public class SetWdsInfCtrl extends ViewCtrl
 			inst.setPosType(PopUpDlgBuilder.PosType.LFT_TOP)
 				.setDlgPos(dcp.x, dcp.y)
 				.setDlgSize(dcp.width, 0)
-				.create().show();
+				.create()
+				.show();
 		}
 	}
 

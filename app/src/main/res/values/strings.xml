@@ -26,6 +26,7 @@
 	<string name="err_sm_not_rdy">系统异常：相关参数未就绪</string>
 	<string name="err_param">系统错误：错误的参数（为空或者类型不对）</string>
 	<string name="err_inside">系统错误：内部数据发生异常</string>
+	<string name="err_vw_trs_pam">系统错误：画面迁移参数异常</string>
 	<string name="info_wbk_dld_over">单词本下载完毕</string>
 	<string name="plus">+</string>
 	<string name="wds_image">联想</string>
@@ -35,4 +36,7 @@
 	<string name="wds_am_sd">美【SOUND】</string>
 	<string name="wds_en_sd">英【SOUND】</string>
 	<string name="wds_sd">SOUND</string>
+	<string name="add_wds_img">添加单词联想</string>
+	<string name="sel_wds_img">选择单词联想</string>
+	<string name="mng_wds_img">管理自己的联想</string>
 </resources>

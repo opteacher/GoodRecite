@@ -26,7 +26,11 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 {
 	public enum ViewType
 	{
-		WORD_MAIN, WORD_TEST, SELECT_WBOOK, SET_PLAN
+		WORD_MAIN,
+		WORD_TEST,
+		SELECT_WBOOK,
+		SET_PLAN,
+		WORD_DETAIL
 	}
 	private ViewType vwType = ViewType.WORD_MAIN;
 	private CstmBtn btnSelWBook = null;
@@ -53,23 +57,62 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		vwType = vt;
 	}
 
+	public static class FgtTrsInfo
+	{
+		public ViewType vt = ViewType.WORD_MAIN;
+		public Object subPam = null;
+	}
+
 	@Override
 	public void toCurFragment(Object pam)
 	{
-		//将填入的参数转换成ViewType
-		vwType = (ViewType) pam;
+		//判断参数的类型
+		if(pam == null)
+		{
+			Toast.makeText(
+					getActivity(),
+					R.string.err_vw_trs_pam,
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+		FgtTrsInfo fti = new FgtTrsInfo();
+		if(pam.getClass() == ViewType.class)
+		{
+			//将填入的参数转换成ViewType
+			vwType = (ViewType) pam;
+		}
+		else if(pam.getClass() == FgtTrsInfo.class)
+		{
+			fti = (FgtTrsInfo) pam;
+			vwType = fti.vt;
+		}
+		else
+		{
+			Toast.makeText(
+					getActivity(),
+					R.string.err_param,
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
 
 		//根据给出的ViewType跳转至指定的Fragment
 		switch (vwType)
 		{
 		case WORD_MAIN:
-			WordMainCtrl.ins().toCurFragment();	break;
+			WordMainCtrl.ins().toCurFragment();
+			break;
 		case SELECT_WBOOK:
-			SelWBookCtrl.ins().toCurFragment(null);	break;
+			SelWBookCtrl.ins().toCurFragment(fti.subPam);
+			break;
 		case SET_PLAN:
-			SetStudyPlanCtrl.ins().toCurFragment(null);	break;
+			SetStudyPlanCtrl.ins().toCurFragment(fti.subPam);
+			break;
 		case WORD_TEST:
-			WordTestCtrl.ins().toCurFragment(null);	break;
+			WordTestCtrl.ins().toCurFragment(fti.subPam);
+			break;
+		case WORD_DETAIL:
+			WordDetailCtrl.ins().toCurFragment(fti.subPam);
+			break;
 		default:
 			return;
 		}
@@ -96,6 +139,9 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 			break;
 		case SET_PLAN:
 			SetStudyPlanCtrl.ins().popBackFragment(pam);
+			break;
+		case WORD_DETAIL:
+			WordDetailCtrl.ins().popBackFragment(pam);
 			break;
 		}
 	}
@@ -124,11 +170,11 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		switch (vwType)
 		{
 		case WORD_MAIN:
-			WordMainCtrl.ins().bindWmnContent(vw);	break;
-		case SELECT_WBOOK:
-			SelWBookCtrl.ins().bindBtmButton(vw);	break;
+			WordMainCtrl.ins().bindWmnContent(vw);
+			break;
 		case SET_PLAN:
-			SetStudyPlanCtrl.ins().bindMainContent(vw);	break;
+			SetStudyPlanCtrl.ins().bindMainContent(vw);
+			break;
 		}
 	}
 

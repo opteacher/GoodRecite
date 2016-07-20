@@ -8,4 +8,8 @@
 	<item name="btnNxtWds" type="id"/>
 	<item name="btnSubAsr" type="id"/>
 	<item name="btnClsDtl" type="id"/>
+	<item name="lytWdsSet" type="id"/>
+	<item name="btnSetWdsDif" type="id"/>
+	<item name="btnSetWdsImp" type="id"/>
+	<item name="lvwDlgLst" type="id"/>
 </resources>

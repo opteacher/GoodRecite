@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.model.BaseActivity;
+import com.test.opower.goodrecite.model.BtmBtnFragment;
 import com.test.opower.goodrecite.model.CstmBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
@@ -11,10 +12,8 @@ import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
 /**
  * Created by opower on 16-6-27.
  */
-public class SelWBookCtrl extends ViewCtrl
+public class SelWBookCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 {
-	private CstmBtn btnSelWbkBtm = null;
-
 	private SelWBookCtrl(BaseActivity act)
 	{
 		super(act);
@@ -37,21 +36,18 @@ public class SelWBookCtrl extends ViewCtrl
 		activity.getFragmentManager()
 				.beginTransaction()
 				.addToBackStack(null)
-				.replace(R.id.lytWdsBtm, SelWbkBtmFragment.ins())
+				.replace(R.id.lytWdsBtm, new BtmBtnFragment()
+						.setBtnId(R.id.btnSelWbkBtm)
+						.setBtnTxt(R.string.start_dld_wb)
+						.setViewCtrl(this))
 				.commit();
 	}
 
-	public void bindBtmButton(View vw)
+	@Override
+	public void bindBtmBtn(View vw)
 	{
 		//开始下载单词本
-		btnSelWbkBtm.setOnClickListener(DldWBookListener.ins());
-	}
-
-	@Override
-	protected void collectCtlFromView(View vw)
-	{
-		//取得底部按钮的引用
-		btnSelWbkBtm = (CstmBtn) activity.findViewById(R.id.btnSelWbkBtm);
+		((CstmBtn) vw).setOnClickListener(DldWBookListener.ins());
 	}
 
 	@Override
