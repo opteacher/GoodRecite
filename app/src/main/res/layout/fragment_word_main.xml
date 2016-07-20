@@ -25,7 +25,7 @@
 			android:layout_height="1dp"
 			android:background="@android:color/darker_gray"/>
 
-		<com.test.opower.goodrecite.model.CstmBtn
+		<com.test.opower.goodrecite.model.WaveClkBtn
 			android:id="@+id/btnSelWBook"
 			android:text="选择单词表"
 			android:textSize="20sp"
@@ -39,7 +39,7 @@
 			android:layout_height="1dp"
 			android:background="@android:color/darker_gray"/>
 
-		<com.test.opower.goodrecite.model.CstmBtn
+		<com.test.opower.goodrecite.model.WaveClkBtn
 			android:id="@+id/btnSetPlan"
 			android:text="设定学习计划"
 			android:textSize="20sp"

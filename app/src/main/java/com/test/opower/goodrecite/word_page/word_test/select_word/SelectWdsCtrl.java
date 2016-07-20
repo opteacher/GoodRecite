@@ -13,12 +13,11 @@ import com.test.opower.goodrecite.database.DBOpnSelWdsNear;
 import com.test.opower.goodrecite.database.DBOpnSelWdsNrFmSy;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.BtmBtnFragment;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by opower on 16-7-1.
@@ -128,7 +127,7 @@ public class SelectWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCt
 	@Override
 	public void bindBtmBtn(View vw)
 	{
-		((CstmBtn) vw).setOnClickListener(new CstmBtn.OnClickListener()
+		((WaveClkBtn) vw).setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)

@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.database.DBMdl;
 import com.test.opower.goodrecite.model.BaseActivity;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.database.DBOpnSelStdPln;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
@@ -26,7 +26,7 @@ public class SetStudyPlanCtrl extends ViewCtrl
 	private EditText edtWordBook = null;
 	private EditText edtWdBkCount = null;
 	private EditText edtOneDayMs = null;
-	private CstmBtn btnEnsureDlg = null;
+	private WaveClkBtn btnEnsureDlg = null;
 
 	private SetStudyPlanCtrl(BaseActivity act)
 	{
@@ -69,7 +69,7 @@ public class SetStudyPlanCtrl extends ViewCtrl
 		edtOneDayMs.setText(String.valueOf(inf.dayWdsNum));
 
 		//设定确定按钮
-		btnEnsureDlg.setOnClickListener(new CstmBtn.OnClickListener()
+		btnEnsureDlg.setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -110,7 +110,7 @@ public class SetStudyPlanCtrl extends ViewCtrl
 		edtWordBook = (EditText) vw.findViewById(R.id.edtWordBook);
 		edtWdBkCount = (EditText) vw.findViewById(R.id.edtWdBkCount);
 		edtOneDayMs = (EditText) vw.findViewById(R.id.edtOneDayMs);
-		btnEnsureDlg = (CstmBtn) vw.findViewById(R.id.btnEnsureDlg);
+		btnEnsureDlg = (WaveClkBtn) vw.findViewById(R.id.btnEnsureDlg);
 	}
 
 	@Override

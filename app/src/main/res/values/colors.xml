@@ -10,4 +10,6 @@
 	<color name="colorError">#d9534f</color>
 	<color name="colorPass">#5cb85c</color>
 	<color name="colorClrBtn">#01A187</color>
+	<color name="colorSelected">#AACCCCCC</color>
+	<color name="colorBtn">#AACCCCCC</color>
 </resources>

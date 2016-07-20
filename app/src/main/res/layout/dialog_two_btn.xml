@@ -22,7 +22,7 @@
 		android:orientation="horizontal"
 		android:layout_alignParentBottom="true">
 
-		<com.test.opower.goodrecite.model.CstmBtn
+		<com.test.opower.goodrecite.model.WaveClkBtn
 			android:id="@+id/btnEnsureDlg"
 			android:text="@string/ensure"
 			android:textSize="20sp"
@@ -37,7 +37,7 @@
 			android:layout_height="match_parent"
 			android:background="@android:color/darker_gray"/>
 
-		<com.test.opower.goodrecite.model.CstmBtn
+		<com.test.opower.goodrecite.model.WaveClkBtn
 			android:id="@+id/btnDismissDlg"
 			android:text="@string/cancel"
 			android:textSize="20sp"

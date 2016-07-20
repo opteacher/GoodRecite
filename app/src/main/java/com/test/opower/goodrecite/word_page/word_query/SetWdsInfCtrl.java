@@ -15,6 +15,7 @@ import com.test.opower.goodrecite.database.DBMdl.LstItmInf;
 import com.test.opower.goodrecite.database.DBMdl.WdsUpdInf;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.PopUpDlgBuilder;
+import com.test.opower.goodrecite.model.PopUpTxtBtn;
 import com.test.opower.goodrecite.model.RdoGrpDlgBuilder;
 import com.test.opower.goodrecite.model.RdoGrpDlgBuilder.RdoInfo;
 import com.test.opower.goodrecite.model.ViewCtrl;
@@ -30,7 +31,7 @@ public class SetWdsInfCtrl extends ViewCtrl
 {
 	private RadioGroup rgpDlgLst = null;
 	private String word = "";
-	private Button btnSetWdsInf = null;
+	private PopUpTxtBtn btnSetWdsInf = null;
 
 	private SetWdsInfCtrl(BaseActivity act)
 	{
@@ -40,7 +41,7 @@ public class SetWdsInfCtrl extends ViewCtrl
 	public static class DlgCrtePam
 	{
 		public String word = "";
-		public Button btn = null;
+		public PopUpTxtBtn btn = null;
 		public int x = 0;
 		public int y = 0;
 		public int width = -2;
@@ -119,6 +120,7 @@ public class SetWdsInfCtrl extends ViewCtrl
 				.setDlgSize(dcp.width, 0)
 				.create()
 				.show();
+			inst.getDlg().setOnCancelListener(btnSetWdsInf);
 		}
 	}
 

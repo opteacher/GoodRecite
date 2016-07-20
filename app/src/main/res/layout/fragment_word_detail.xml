@@ -25,9 +25,9 @@
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
 
-				<com.test.opower.goodrecite.model.CstmBtn
+				<com.test.opower.goodrecite.model.PopUpTxtBtn
 					android:id="@id/btnSetWdsDif"
-					android:text="单词难度"
+					android:text="@string/wds_dif"
 					android:textSize="20sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -43,9 +43,9 @@
 					android:layout_height="match_parent"
 					android:background="@android:color/darker_gray" />
 
-				<com.test.opower.goodrecite.model.CstmBtn
+				<com.test.opower.goodrecite.model.PopUpTxtBtn
 					android:id="@id/btnSetWdsImp"
-					android:text="单词重要度"
+					android:text="@string/wds_imp"
 					android:textSize="20sp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -70,8 +70,7 @@
 				android:textSize="30sp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:gravity="center_horizontal"
-				android:layout_alignParentTop="true"/>
+				android:gravity="center_horizontal"/>
 
 			<!--sounds-->
 			<LinearLayout

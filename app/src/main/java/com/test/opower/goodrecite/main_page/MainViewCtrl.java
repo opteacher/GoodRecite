@@ -6,7 +6,7 @@ import android.view.View;
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.word_page.WordActivity;
 import com.test.opower.goodrecite.model.BaseActivity;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 
 /**
@@ -14,10 +14,10 @@ import com.test.opower.goodrecite.model.ViewCtrl;
  */
 public class MainViewCtrl extends ViewCtrl
 {
-	private CstmBtn btnMuRctWd = null;
-	private CstmBtn btnMuRdTrsf = null;
-	private CstmBtn btnMuRdyEx = null;
-	private CstmBtn btnMuStdSt = null;
+	private WaveClkBtn btnMuRctWd = null;
+	private WaveClkBtn btnMuRdTrsf = null;
+	private WaveClkBtn btnMuRdyEx = null;
+	private WaveClkBtn btnMuStdSt = null;
 
 	private MainViewCtrl(BaseActivity act)	{ super(act); }
 
@@ -37,7 +37,7 @@ public class MainViewCtrl extends ViewCtrl
 		collectCtlFromView(vw);
 
 		//绑定页面的控件事件
-		btnMuRctWd.setOnClickListener(new CstmBtn.OnClickListener()
+		btnMuRctWd.setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			//背诵单词按钮被点击
 			@Override
@@ -57,10 +57,10 @@ public class MainViewCtrl extends ViewCtrl
 	@Override
 	protected void collectCtlFromView(View vw)
 	{
-		btnMuRctWd = (CstmBtn) vw.findViewById(R.id.btnMuRctWd);
-		btnMuRdTrsf = (CstmBtn) vw.findViewById(R.id.btnMuRdTrsf);
-		btnMuRdyEx = (CstmBtn) vw.findViewById(R.id.btnMuRdyEx);
-		btnMuStdSt = (CstmBtn) vw.findViewById(R.id.btnMuStdSt);
+		btnMuRctWd = (WaveClkBtn) vw.findViewById(R.id.btnMuRctWd);
+		btnMuRdTrsf = (WaveClkBtn) vw.findViewById(R.id.btnMuRdTrsf);
+		btnMuRdyEx = (WaveClkBtn) vw.findViewById(R.id.btnMuRdyEx);
+		btnMuStdSt = (WaveClkBtn) vw.findViewById(R.id.btnMuStdSt);
 	}
 
 	private static MainViewCtrl instance = null;

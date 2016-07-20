@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.SessionData;
 import com.test.opower.goodrecite.database.DBMdl;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.database.DBOpnIstDict;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by opower on 16-6-27.
  */
-public class DldWBookListener implements CstmBtn.OnClickListener
+public class DldWBookListener implements WaveClkBtn.OnClickListener
 {
 	private DldWBookListener()	{}
 	private static DldWBookListener instance = new DldWBookListener();

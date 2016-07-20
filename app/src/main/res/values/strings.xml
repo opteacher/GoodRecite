@@ -39,4 +39,6 @@
 	<string name="add_wds_img">添加单词联想</string>
 	<string name="sel_wds_img">选择单词联想</string>
 	<string name="mng_wds_img">管理自己的联想</string>
+	<string name="wds_dif">单词难度</string>
+	<string name="wds_imp">单词重要度</string>
 </resources>

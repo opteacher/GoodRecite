@@ -1,10 +1,8 @@
 package com.test.opower.goodrecite.model;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,7 @@ import android.view.ViewGroup;
  */
 public class BtmBtnFragment extends Fragment
 {
-	protected CstmBtn btnWdsBtm = null;
+	protected WaveClkBtn btnWdsBtm = null;
 	private int id = 0;
 	private int txt = 0;
 	private BtmBtnVwCtrl vc = null;
@@ -41,7 +39,7 @@ public class BtmBtnFragment extends Fragment
 	{
 		if(btnWdsBtm == null)
 		{
-			btnWdsBtm = new CstmBtn(getActivity());
+			btnWdsBtm = new WaveClkBtn(getActivity());
 			btnWdsBtm.setId(id);
 			btnWdsBtm.setText(txt);
 			btnWdsBtm.setTextSize(30);

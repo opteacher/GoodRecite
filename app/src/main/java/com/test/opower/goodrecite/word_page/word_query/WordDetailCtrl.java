@@ -16,13 +16,12 @@ import com.test.opower.goodrecite.database.DBMdl;
 import com.test.opower.goodrecite.database.DBOpnSelWdsDifClr;
 import com.test.opower.goodrecite.database.DBOpnSelWdsDtl;
 import com.test.opower.goodrecite.database.DBOpnSelWdsImpClr;
-import com.test.opower.goodrecite.main_page.MainViewCtrl;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.BtmBtnFragment;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.PopUpTxtBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
-import com.test.opower.goodrecite.word_page.word_test.WordTestCtrl;
 
 /**
  * Created by opower on 16-7-7.
@@ -39,8 +38,8 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 	private TabLayout lytWdsDtl = null;
 	private ViewPager vpgWdsDtl = null;
 	private DtlPagerAdapter dpgAdapter = null;
-	private CstmBtn btnSetWdsDif = null;
-	private CstmBtn btnSetWdsImp = null;
+	private PopUpTxtBtn btnSetWdsDif = null;
+	private PopUpTxtBtn btnSetWdsImp = null;
 	private ShapeDrawable dblClrCclOfWdsDif = null;
 	private ShapeDrawable dblClrCclOfWdsImp = null;
 	private final int clrCircleSz = 50;
@@ -125,7 +124,7 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 	public void bindMainContent(View vw)
 	{
 		//设置单词的难度
-		btnSetWdsDif.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSetWdsDif.setOnClickListener(new PopUpTxtBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -145,7 +144,7 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 		});
 
 		//设置单词的重要度
-		btnSetWdsImp.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSetWdsImp.setOnClickListener(new PopUpTxtBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -238,8 +237,8 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 		imgWdsEnSd = (ImageButton) vw.findViewById(R.id.imgWdsEnSd);
 		lytWdsDtl = (TabLayout) vw.findViewById(R.id.lytWdsDtl);
 		vpgWdsDtl = (ViewPager) vw.findViewById(R.id.vpgWdsDtl);
-		btnSetWdsDif = (CstmBtn) vw.findViewById(R.id.btnSetWdsDif);
-		btnSetWdsImp = (CstmBtn) vw.findViewById(R.id.btnSetWdsImp);
+		btnSetWdsDif = (PopUpTxtBtn) vw.findViewById(R.id.btnSetWdsDif);
+		btnSetWdsImp = (PopUpTxtBtn) vw.findViewById(R.id.btnSetWdsImp);
 	}
 
 	@Override
@@ -259,7 +258,7 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 	@Override
 	public void bindBtmBtn(View vw)
 	{
-		((CstmBtn) vw).setOnClickListener(new CstmBtn.OnClickListener()
+		((WaveClkBtn) vw).setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)

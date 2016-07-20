@@ -2,10 +2,10 @@ package com.test.opower.goodrecite.model;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -48,20 +48,21 @@ public class LnkGrpDlgBuilder extends PopUpDlgBuilder
 	public static class ItmInfo
 	{
 		public Object tag = null;
-		public String txt = "";
+		public int img = 0;
+		public int txt = 0;
 		public int clr = 0xFFffffff;
 
-		public ItmInfo(int clr, Object tag, String txt)
+		public ItmInfo(int clr, Object tag, int txt, int img)
 		{
 			this.clr = clr;
 			this.tag = tag;
 			this.txt = txt;
+			this.img = img;
 		}
 	}
 
 	public LnkGrpDlgBuilder setLstInfo(List<ItmInfo> lst)
 	{
-		//lvwDlgLst.removeAllViews();
 		lstDat = lst;
 		lia.notifyDataSetChanged();
 		return this;
@@ -85,10 +86,8 @@ public class LnkGrpDlgBuilder extends PopUpDlgBuilder
 		{
 			dlg = new Dialog(context, R.style.PopupDlgTheme);
 		}
-
 		//设置对话框内容
 		dlg.setContentView(lvwDlgLst);
-
 		//调整对话框
 		adjustDlgSize();
 
@@ -121,16 +120,35 @@ public class LnkGrpDlgBuilder extends PopUpDlgBuilder
 			ItmInfo ii = lstDat.get(i);
 			if(view == null)
 			{
-				TextView tmp = new TextView(context);
-				tmp.setText(ii.txt);
-				tmp.setTag(ii.tag);
-				tmp.setBackgroundColor(ii.clr);
-				tmp.setLayoutParams(new ListView.LayoutParams(
+				view = inflater.inflate(R.layout.item_hor_img_txt, viewGroup, false);
+				ImageView imgHorItm = (ImageView) view.findViewById(R.id.imgHorItm);
+				TextView txtHorItm = (TextView) view.findViewById(R.id.txtHorItm);
+				if(ii.img == 0)
+				{
+					imgHorItm.setVisibility(View.GONE);
+				}
+				else
+				{
+					imgHorItm.setImageResource(ii.img);
+					imgHorItm.setBackgroundResource(R.drawable.btn_color);
+				}
+				if(ii.txt == 0)
+				{
+					txtHorItm.setVisibility(View.GONE);
+				}
+				else
+				{
+					txtHorItm.setText(ii.txt);
+					txtHorItm.setPadding(2, 2, 2, 2);
+				}
+				if(ii.tag != null)
+				{
+					view.setTag(ii.tag);
+				}
+				view.setBackgroundColor(ii.clr);
+				view.setLayoutParams(new ListView.LayoutParams(
 						ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT));
-				tmp.setGravity(Gravity.CENTER);
-				tmp.setPadding(2, 2, 2, 2);
-				view = tmp;
 			}
 			return view;
 		}

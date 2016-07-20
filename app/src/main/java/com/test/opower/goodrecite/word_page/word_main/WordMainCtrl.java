@@ -9,7 +9,7 @@ import com.test.opower.goodrecite.database.DBMdl;
 import com.test.opower.goodrecite.database.DBOpnSelStdPln;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.BtmBtnFragment;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.select_wbook.SelWBookCtrl;
 import com.test.opower.goodrecite.word_page.set_study_plan.SetStudyPlanCtrl;
@@ -33,8 +33,8 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		WORD_DETAIL
 	}
 	private ViewType vwType = ViewType.WORD_MAIN;
-	private CstmBtn btnSelWBook = null;
-	private CstmBtn btnSetPlan = null;
+	private WaveClkBtn btnSelWBook = null;
+	private WaveClkBtn btnSetPlan = null;
 	private WordMainPanel wmp = null;
 
 	private WordMainCtrl(BaseActivity act)
@@ -187,7 +187,7 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		setDataToView(vw);
 
 		//设置选择单词表按钮的按键事件
-		btnSelWBook.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSelWBook.setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -198,7 +198,7 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 		});
 
 		//设置设定学习计划按钮的按键事件
-		btnSetPlan.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSetPlan.setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -211,7 +211,7 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 	@Override
 	public void bindBtmBtn(View vw)
 	{
-		((CstmBtn) vw).setOnClickListener(new CstmBtn.OnClickListener()
+		((WaveClkBtn) vw).setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -277,8 +277,8 @@ public class WordMainCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 	@Override
 	protected void collectCtlFromView(View vw)
 	{
-		btnSelWBook = (CstmBtn) vw.findViewById(R.id.btnSelWBook);
-		btnSetPlan = (CstmBtn) vw.findViewById(R.id.btnSetPlan);
+		btnSelWBook = (WaveClkBtn) vw.findViewById(R.id.btnSelWBook);
+		btnSetPlan = (WaveClkBtn) vw.findViewById(R.id.btnSetPlan);
 		wmp = (WordMainPanel) vw.findViewById(R.id.pnlWordStatistics);
 	}
 

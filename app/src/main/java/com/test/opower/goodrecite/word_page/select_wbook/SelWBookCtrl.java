@@ -5,7 +5,7 @@ import android.view.View;
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.BtmBtnFragment;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
 
@@ -47,7 +47,7 @@ public class SelWBookCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtr
 	public void bindBtmBtn(View vw)
 	{
 		//开始下载单词本
-		((CstmBtn) vw).setOnClickListener(DldWBookListener.ins());
+		((WaveClkBtn) vw).setOnClickListener(DldWBookListener.ins());
 	}
 
 	@Override

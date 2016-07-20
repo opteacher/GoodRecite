@@ -37,7 +37,7 @@
 			shadow:z_depth_shape="rect"
 			shadow:z_depth_padding="z_depth2">
 
-			<com.test.opower.goodrecite.model.CstmBtn
+			<com.test.opower.goodrecite.model.WaveClkBtn
 				android:id="@+id/btnMuRctWd"
 				android:text="背诵单词"
 				android:textSize="35sp"
@@ -55,7 +55,7 @@
 			shadow:z_depth_shape="rect"
 			shadow:z_depth_padding="z_depth2">
 
-			<com.test.opower.goodrecite.model.CstmBtn
+			<com.test.opower.goodrecite.model.WaveClkBtn
 				android:id="@+id/btnMuRdTrsf"
 				android:text="阅读理解"
 				android:textSize="35sp"
@@ -81,7 +81,7 @@
 			shadow:z_depth_shape="rect"
 			shadow:z_depth_padding="z_depth2">
 
-			<com.test.opower.goodrecite.model.CstmBtn
+			<com.test.opower.goodrecite.model.WaveClkBtn
 				android:id="@+id/btnMuRdyEx"
 				android:text="备考练习"
 				android:textSize="35sp"
@@ -99,7 +99,7 @@
 			shadow:z_depth_shape="rect"
 			shadow:z_depth_padding="z_depth2">
 
-			<com.test.opower.goodrecite.model.CstmBtn
+			<com.test.opower.goodrecite.model.WaveClkBtn
 				android:id="@+id/btnMuStdSt"
 				android:text="学习统计"
 				android:textSize="35sp"

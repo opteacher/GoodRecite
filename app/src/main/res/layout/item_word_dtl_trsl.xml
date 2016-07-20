@@ -32,16 +32,15 @@
 					android:layout_weight="1"
 					android:paddingLeft="10dp"/>
 
-				<ImageButton
+				<com.test.opower.goodrecite.model.PopUpImgBtn
 					android:id="@+id/btnWdsImgOpn"
 					android:src="@drawable/option_ver"
+					android:scaleType="fitCenter"
 					android:layout_width="match_parent"
 					android:layout_height="30dp"
 					android:layout_weight="5"
 					android:paddingTop="5dp"
-					android:paddingBottom="5dp"
-					android:scaleType="fitCenter"
-					android:background="@drawable/btn_color"/>
+					android:paddingBottom="5dp"/>
 			</LinearLayout>
 
 			<View
@@ -100,7 +99,7 @@
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
-				android:id="@+id/txtWdsTrsf"
+				android:id="@+id/txtWdsTsl"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:padding="10dp"/>

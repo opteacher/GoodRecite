@@ -16,7 +16,7 @@
 		android:layout_alignParentTop="true"
 		android:background="@color/colorPrimary"/>
 
-	<com.test.opower.goodrecite.model.CstmBtn
+	<com.test.opower.goodrecite.model.WaveClkBtn
 		android:id="@+id/btnEnsureDlg"
 		android:text="@string/ensure"
 		android:textSize="30sp"

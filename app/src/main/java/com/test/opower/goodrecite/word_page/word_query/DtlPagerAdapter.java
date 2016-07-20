@@ -5,8 +5,6 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,8 +12,7 @@ import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.common_utils.CmnUtils;
 import com.test.opower.goodrecite.database.DBOpnSelWdsDtl;
 import com.test.opower.goodrecite.model.BaseActivity;
-
-import org.w3c.dom.Text;
+import com.test.opower.goodrecite.model.PopUpImgBtn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +24,9 @@ class DtlPagerAdapter extends PagerAdapter
 {
 	private List<String> title = null;
 	private List<View> contents = null;
-	private TextView txtWdsTrsf = null;
+	private TextView txtWdsTsl = null;
 	private LinearLayout lytWdsExp = null;
-	private ImageButton btnWdsImgOpn = null;
+	private PopUpImgBtn btnWdsImgOpn = null;
 	private TextView txtWdsExp = null;
 	private LinearLayout lytWdsPhs = null;
 	private TextView txtWdsPhs = null;
@@ -59,7 +56,7 @@ class DtlPagerAdapter extends PagerAdapter
 
 		vw = inflater.inflate(R.layout.item_word_dtl_trsl, null);
 		collectCtlFromTrs(vw);
-		txtWdsTrsf.setText(info.trs.replace("|", "\n\n"));
+		txtWdsTsl.setText(info.trs.replace("|", "\n\n"));
 		contents.add(vw);
 
 		vw = inflater.inflate(R.layout.item_word_dtl_exp, null);
@@ -113,8 +110,8 @@ class DtlPagerAdapter extends PagerAdapter
 
 	private void collectCtlFromTrs(View vw)
 	{
-		txtWdsTrsf = (TextView) vw.findViewById(R.id.txtWdsTrsf);
-		btnWdsImgOpn = (ImageButton) vw.findViewById(R.id.btnWdsImgOpn);
+		txtWdsTsl = (TextView) vw.findViewById(R.id.txtWdsTsl);
+		btnWdsImgOpn = (PopUpImgBtn) vw.findViewById(R.id.btnWdsImgOpn);
 	}
 
 	private void collectCtlFromExp(View vw)
@@ -144,17 +141,18 @@ class DtlPagerAdapter extends PagerAdapter
 	public void bindMainContent(final BaseActivity act, final String word)
 	{
 		//设置单词联想选项按钮
-		btnWdsImgOpn.setOnClickListener(new View.OnClickListener()
+		btnWdsImgOpn.setOnClickListener(new PopUpImgBtn.OnClickListener()
 		{
 			@Override
-			public void onClick(View view)
+			public void onClick(View vw)
 			{
 				OpenWdsImgCtrl.DlgCrtePam dcp = new OpenWdsImgCtrl.DlgCrtePam();
 				dcp.word = word;
-				Point vwPos = CmnUtils.getVwLocOnAct(view, act);
-				dcp.width = 400;
+				Point vwPos = CmnUtils.getVwLocOnAct(vw, act);
+				dcp.width = 500;
 				dcp.x = vwPos.x - dcp.width;
 				dcp.y = vwPos.y;
+				dcp.ccl = btnWdsImgOpn;
 				OpenWdsImgCtrl.ins().toCurFragment(dcp);
 			}
 		});

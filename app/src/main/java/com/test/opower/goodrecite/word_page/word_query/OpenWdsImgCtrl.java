@@ -1,6 +1,7 @@
 package com.test.opower.goodrecite.word_page.word_query;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -39,6 +40,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 		public int y = 0;
 		public int width = -2;
 		public int height = -2;
+		public DialogInterface.OnCancelListener ccl = null;
 	}
 
 	@Override
@@ -66,14 +68,13 @@ public class OpenWdsImgCtrl extends ViewCtrl
 		word = dcp.word;
 
 		//填入选项
-		String txt = "";
 		List<ItmInfo> lst = new ArrayList<>();
-		txt = getActivity().getString(R.string.add_wds_img);
-		lst.add(new ItmInfo(0xFFffffff, ADD_WDS_IMG, txt));
-		txt = getActivity().getString(R.string.sel_wds_img);
-		lst.add(new ItmInfo(0xFFffffff, SEL_WDS_IMG, txt));
-		txt = getActivity().getString(R.string.mng_wds_img);
-		lst.add(new ItmInfo(0xFFffffff, MNG_WDS_IMG, txt));
+		lst.add(new ItmInfo(0xFFffffff, ADD_WDS_IMG,
+				R.string.add_wds_img, R.drawable.plus_red));
+		lst.add(new ItmInfo(0xFFffffff, SEL_WDS_IMG,
+				R.string.sel_wds_img, R.drawable.sel_lst));
+		lst.add(new ItmInfo(0xFFffffff, MNG_WDS_IMG,
+				R.string.mng_wds_img, R.drawable.edit));
 		inst.setLstInfo(lst);
 
 		//生成并显示对话框
@@ -84,6 +85,12 @@ public class OpenWdsImgCtrl extends ViewCtrl
 			.setDlgSize(dcp.width, dcp.height)
 			.create()
 			.show();
+
+		//设置对话框关闭时所执行的触发按钮状态变化
+		if(dcp.ccl != null)
+		{
+			inst.getDlg().setOnCancelListener(dcp.ccl);
+		}
 	}
 
 	@Override
@@ -112,6 +119,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 						switch ((Integer) view.getTag())
 						{
 						case ADD_WDS_IMG:
+
 							break;
 						case SEL_WDS_IMG:
 							break;

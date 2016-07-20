@@ -18,7 +18,7 @@ import android.widget.Button;
 /**
  * Created by opower on 16-6-24.
  */
-public class CstmBtn extends Button
+public class WaveClkBtn extends Button
 {
 	private Paint pit = new Paint();
 	private final int AnimDuration = 500;
@@ -27,56 +27,56 @@ public class CstmBtn extends Button
 	private int clkX = 0;
 	private int clkY = 0;
 	private float clkRds = 0;
-	private Property<CstmBtn, Float> clkRdsPpt = new Property<CstmBtn, Float>(
+	private Property<WaveClkBtn, Float> clkRdsPpt = new Property<WaveClkBtn, Float>(
 			Float.class, "radius")
 	{
 		@Override
-		public Float get(CstmBtn cstmBtn)
+		public Float get(WaveClkBtn waveClkBtn)
 		{
-			return cstmBtn.clkRds;
+			return waveClkBtn.clkRds;
 		}
 
 		@Override
-		public void set(CstmBtn object, Float value)
+		public void set(WaveClkBtn object, Float value)
 		{
 			object.clkRds = value;
 			//刷新画布
 			invalidate();
 		}
 	};
-	private Property<CstmBtn, Integer> clkClrPpt = new Property<CstmBtn, Integer>(
+	private Property<WaveClkBtn, Integer> clkClrPpt = new Property<WaveClkBtn, Integer>(
 			Integer.class, "background_color")
 	{
 		@Override
-		public Integer get(CstmBtn cstmBtn)
+		public Integer get(WaveClkBtn waveClkBtn)
 		{
 			return pit.getColor();
 		}
 
 		@Override
-		public void set(CstmBtn object, Integer value)
+		public void set(WaveClkBtn object, Integer value)
 		{
 			object.pit.setColor(value);
 		}
 	};
 	private OnClickListener cbas = null;
 
-	public CstmBtn setOnClickListener(OnClickListener l)
+	public WaveClkBtn setOnClickListener(OnClickListener l)
 	{
 		cbas = l;	return this;
 	}
 
-	public CstmBtn(Context context)
+	public WaveClkBtn(Context context)
 	{
 		this(context, null, 0);
 	}
 
-	public CstmBtn(Context context, AttributeSet attrs)
+	public WaveClkBtn(Context context, AttributeSet attrs)
 	{
 		this(context, attrs, 0);
 	}
 
-	public CstmBtn(Context context, AttributeSet attrs, int defStyleAttr)
+	public WaveClkBtn(Context context, AttributeSet attrs, int defStyleAttr)
 	{
 		super(context, attrs, defStyleAttr);
 
@@ -95,7 +95,7 @@ public class CstmBtn extends Button
 				isDuringAnim = false;
 				if(cbas != null)
 				{
-					cbas.onClick(CstmBtn.this);
+					cbas.onClick(WaveClkBtn.this);
 				}
 			}
 

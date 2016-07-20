@@ -15,7 +15,8 @@ import com.test.opower.goodrecite.database.DBOpnSelWdsDifClr;
 import com.test.opower.goodrecite.database.DBOpnSelWdsImpClr;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.BtmBtnFragment;
-import com.test.opower.goodrecite.model.CstmBtn;
+import com.test.opower.goodrecite.model.PopUpTxtBtn;
+import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.RdoGrpDlgBuilder;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
@@ -32,8 +33,8 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 	private String word = "";
 	private TextView txtNewWord = null;
 	private ImageButton btnWdsSd = null;
-	private CstmBtn btnSetWdsDif = null;
-	private CstmBtn btnSetWdsImp = null;
+	private PopUpTxtBtn btnSetWdsDif = null;
+	private PopUpTxtBtn btnSetWdsImp = null;
 	private ShapeDrawable dblClrCclOfWdsDif = null;
 	private ShapeDrawable dblClrCclOfWdsImp = null;
 	private final int clrCircleSz = 50;
@@ -113,7 +114,7 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 		});
 
 		//设置单词的难度
-		btnSetWdsDif.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSetWdsDif.setOnClickListener(new PopUpTxtBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -133,7 +134,7 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 		});
 
 		//设置单词的重要度
-		btnSetWdsImp.setOnClickListener(new CstmBtn.OnClickListener()
+		btnSetWdsImp.setOnClickListener(new PopUpTxtBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -190,7 +191,7 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 	@Override
 	public void bindBtmBtn(View vw)
 	{
-		((CstmBtn) vw).setOnClickListener(new CstmBtn.OnClickListener()
+		((WaveClkBtn) vw).setOnClickListener(new WaveClkBtn.OnClickListener()
 		{
 			@Override
 			public void onClick(View vw)
@@ -211,8 +212,8 @@ public class NewWdsCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwCtrl
 	{
 		txtNewWord = (TextView) vw.findViewById(R.id.txtNewWord);
 		btnWdsSd = (ImageButton) vw.findViewById(R.id.btnWdsSd);
-		btnSetWdsDif = (CstmBtn) vw.findViewById(R.id.btnSetWdsDif);
-		btnSetWdsImp = (CstmBtn) vw.findViewById(R.id.btnSetWdsImp);
+		btnSetWdsDif = (PopUpTxtBtn) vw.findViewById(R.id.btnSetWdsDif);
+		btnSetWdsImp = (PopUpTxtBtn) vw.findViewById(R.id.btnSetWdsImp);
 	}
 
 	public String getWord()

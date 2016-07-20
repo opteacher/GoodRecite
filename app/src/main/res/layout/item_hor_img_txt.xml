@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/btn_color">
+
+	<ImageView
+		android:id="@+id/imgHorItm"
+		android:scaleType="fitCenter"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:layout_weight="5"/>
+
+	<TextView
+		android:id="@+id/txtHorItm"
+		android:textSize="13sp"
+		android:background="@drawable/btn_color"
+		android:gravity="center_vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="3"/>
+</LinearLayout>
