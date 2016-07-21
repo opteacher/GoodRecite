@@ -23,6 +23,8 @@ import com.test.opower.goodrecite.model.WaveClkBtn;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.word_page.word_main.WordMainCtrl;
 
+import java.util.Map;
+
 /**
  * Created by opower on 16-7-7.
  */
@@ -49,7 +51,7 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 		super(act);
 
 		SetWdsInfCtrl.ini(act);
-		OpenWdsImgCtrl.ini(act);
+		OpnWdsImgCtrl.ini(act);
 
 		dblClrCclOfWdsDif = new ShapeDrawable(new OvalShape());
 		dblClrCclOfWdsDif.getPaint().setColor(0xFF000000);
@@ -163,6 +165,7 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 			}
 		});
 
+		//绑定分页上的控件
 		dpgAdapter.bindMainContent(getActivity(), word);
 	}
 
@@ -225,6 +228,9 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 			dblClrCclOfWdsImp.getPaint().setColor(impClr.impClr);
 		}
 		btnSetWdsImp.setCompoundDrawables(dblClrCclOfWdsImp, null, null, null);
+
+		//为各子页面设置值
+		dpgAdapter.setDataToView(getActivity(), word);
 	}
 
 	@Override
@@ -253,6 +259,23 @@ public class WordDetailCtrl extends ViewCtrl implements BtmBtnFragment.BtmBtnVwC
 			activity.getFragmentManager().popBackStack();
 		}
 		activity.getFragmentManager().popBackStack();
+	}
+
+	@Override
+	public void upDataOnView(Map<Integer, Object> pam)
+	{
+		if(pam.containsKey(R.id.txtWdsImgDsc)
+		|| pam.containsKey(R.id.imgWdsImgPic))
+		{
+			if(pam.containsKey(R.id.txtWdsImgDsc))
+			{
+				dpgAdapter.setWdsImgDsc((String) pam.get(R.id.txtWdsImgDsc));
+			}
+			if(pam.containsKey(R.id.imgWdsImgPic))
+			{
+				dpgAdapter.setWdsImgPic((String) pam.get(R.id.imgWdsImgPic));
+			}
+		}
 	}
 
 	@Override

@@ -12,4 +12,5 @@
 	<item name="btnSetWdsDif" type="id"/>
 	<item name="btnSetWdsImp" type="id"/>
 	<item name="lvwDlgLst" type="id"/>
+	<item name="lvwWdsImg" type="id"/>
 </resources>

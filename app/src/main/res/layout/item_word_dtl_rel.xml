@@ -48,14 +48,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsNrFm"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -93,14 +92,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsNrSy"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -138,14 +136,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsMuli"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -183,14 +180,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsPsnt"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -228,14 +224,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsPast"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -273,14 +268,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsDone"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 	</LinearLayout>
 </android.support.v4.widget.NestedScrollView>

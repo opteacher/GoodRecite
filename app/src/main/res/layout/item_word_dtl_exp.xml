@@ -48,14 +48,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsExp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -92,14 +91,13 @@
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="1dp"
-				android:layout_marginBottom="10dp"
 				android:background="@android:color/darker_gray"/>
 
 			<TextView
 				android:id="@+id/txtWdsPhs"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dp"/>
+				android:padding="5dp"/>
 		</LinearLayout>
 	</LinearLayout>
 </android.support.v4.widget.NestedScrollView>

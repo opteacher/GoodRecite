@@ -15,6 +15,9 @@ import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.ViewCtrl;
 import com.test.opower.goodrecite.model.WaveClkBtn;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by opower on 16-7-21.
  */
@@ -28,7 +31,7 @@ public class EdtWdsImgCtrl extends ViewCtrl
 	private EditText edtWdImgDsc = null;
 	private WaveClkBtn btnEnsureDlg = null;
 
-	public EdtWdsImgCtrl(BaseActivity act)
+	private EdtWdsImgCtrl(BaseActivity act)
 	{
 		super(act);
 
@@ -129,6 +132,7 @@ public class EdtWdsImgCtrl extends ViewCtrl
 			@Override
 			public void onClick(View view)
 			{
+				//从画面上取得单词联想文字描述
 				String txtDsc = edtWdImgDsc.getText().toString();
 				if(txtDsc.isEmpty())
 				{
@@ -140,6 +144,7 @@ public class EdtWdsImgCtrl extends ViewCtrl
 					return;
 				}
 
+				//填入数据库
 				DBMdl.ins().begOperation(DBMdl.INSERT_WORD_IMAGE, word, null);
 				DBOpnIstWdsImg.ExePam ep = new DBOpnIstWdsImg.ExePam();
 				ep.dsc = txtDsc;
@@ -148,13 +153,13 @@ public class EdtWdsImgCtrl extends ViewCtrl
 					Object tmp = btnSelWdImgPic.getTag();
 					if(tmp != null)
 					{
-						ep.lclPic = tmp.toString();
+						ep.pic = tmp.toString();
 					}
 				}
 				else
 				if(rdoSelNetPic.isChecked())
 				{
-					ep.netPic = edtWdImgPicURL.getText().toString();
+					ep.pic = edtWdImgPicURL.getText().toString();
 				}
 				int opnMsg = DBMdl.ins().exeOperation(ep, null);
 				if(opnMsg != 0)
@@ -162,7 +167,20 @@ public class EdtWdsImgCtrl extends ViewCtrl
 					Toast.makeText(getActivity(), opnMsg, Toast.LENGTH_SHORT).show();
 				}
 
+				//更新单词详细界面的相关内容
+				Map<Integer, Object> pam = new HashMap<>();
+				pam.put(R.id.txtWdsImgDsc, txtDsc);
+				if(!ep.pic.isEmpty())
+				{
+					pam.put(R.id.imgWdsImgPic, ep.pic);
+				}
+				WordDetailCtrl.ins().upDataOnView(pam);
+
+				//关闭单词联想输入对话框
 				dlg.dismiss();
+
+				//关闭单词联想选项列表对话框
+				OpnWdsImgCtrl.ins().popBackFragment(null);
 			}
 		});
 	}

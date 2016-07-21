@@ -55,8 +55,7 @@ public class DBOpnIstWdsImg extends DBMdl.DBOpn
 	public static class ExePam
 	{
 		public String dsc = "";
-		public String lclPic = "";
-		public String netPic = "";
+		public String pic = "";
 	}
 
 	@Override
@@ -76,14 +75,9 @@ public class DBOpnIstWdsImg extends DBMdl.DBOpn
 		//文字描述
 		p.put(WordImg.DESCRIPTION, new DBPam(ep.dsc));
 		//图片联想
-		if(!ep.lclPic.isEmpty())
+		if(!ep.pic.isEmpty())
 		{
-			p.put(WordImg.PICTURE, new DBPam(ep.lclPic));
-		}
-		else
-		if(!ep.netPic.isEmpty())
-		{
-			p.put(WordImg.PICTURE, new DBPam(ep.netPic));
+			p.put(WordImg.PICTURE, new DBPam(ep.pic));
 		}
 		//写入当前用户名
 		p.put(WordImg.PROPOSER, new DBPam(SessionData.ins().getUserName()));

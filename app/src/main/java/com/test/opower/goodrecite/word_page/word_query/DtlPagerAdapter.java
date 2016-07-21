@@ -1,18 +1,24 @@
 package com.test.opower.goodrecite.word_page.word_query;
 
+import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.test.opower.goodrecite.R;
 import com.test.opower.goodrecite.common_utils.CmnUtils;
+import com.test.opower.goodrecite.database.DBMdl;
+import com.test.opower.goodrecite.database.DBOpnSelCurWdsImg;
 import com.test.opower.goodrecite.database.DBOpnSelWdsDtl;
 import com.test.opower.goodrecite.model.BaseActivity;
 import com.test.opower.goodrecite.model.PopUpImgBtn;
+import com.test.opower.goodrecite.word_page.word_query.OpnWdsImgCtrl.DlgCrtePam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +31,15 @@ class DtlPagerAdapter extends PagerAdapter
 	private List<String> title = null;
 	private List<View> contents = null;
 	private TextView txtWdsTsl = null;
-	private LinearLayout lytWdsExp = null;
 	private PopUpImgBtn btnWdsImgOpn = null;
+	private TextView txtWdsImgDsc = null;
+	private ImageView imgWdsImgPic = null;
+
+	private LinearLayout lytWdsExp = null;
 	private TextView txtWdsExp = null;
 	private LinearLayout lytWdsPhs = null;
 	private TextView txtWdsPhs = null;
+
 	private LinearLayout lytWdsNrFm = null;
 	private TextView txtWdsNrFm = null;
 	private LinearLayout lytWdsNrSy = null;
@@ -112,6 +122,8 @@ class DtlPagerAdapter extends PagerAdapter
 	{
 		txtWdsTsl = (TextView) vw.findViewById(R.id.txtWdsTsl);
 		btnWdsImgOpn = (PopUpImgBtn) vw.findViewById(R.id.btnWdsImgOpn);
+		txtWdsImgDsc = (TextView) vw.findViewById(R.id.txtWdsImgDsc);
+		imgWdsImgPic = (ImageView) vw.findViewById(R.id.imgWdsImgPic);
 	}
 
 	private void collectCtlFromExp(View vw)
@@ -146,16 +158,43 @@ class DtlPagerAdapter extends PagerAdapter
 			@Override
 			public void onClick(View vw)
 			{
-				OpenWdsImgCtrl.DlgCrtePam dcp = new OpenWdsImgCtrl.DlgCrtePam();
+				DlgCrtePam dcp = new DlgCrtePam();
 				dcp.word = word;
 				Point vwPos = CmnUtils.getVwLocOnAct(vw, act);
 				dcp.width = 500;
 				dcp.x = vwPos.x - dcp.width;
 				dcp.y = vwPos.y;
 				dcp.ccl = btnWdsImgOpn;
-				OpenWdsImgCtrl.ins().toCurFragment(dcp);
+				OpnWdsImgCtrl.ins().toCurFragment(dcp);
 			}
 		});
+	}
+
+	public void setDataToView(final BaseActivity act, final String word)
+	{
+		DBMdl.ins().begOperation(DBMdl.SELECT_CURRENT_WORD_IMG, null, null);
+		DBOpnSelCurWdsImg.ExeRst er = new DBOpnSelCurWdsImg.ExeRst();
+		int opnMsg = DBMdl.ins().exeOperation(word, er);
+		if(opnMsg != 0)
+		{
+			Toast.makeText(act, opnMsg, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		txtWdsImgDsc.setText(er.dsc);
+		if(er.pic != null)
+		{
+			imgWdsImgPic.setImageBitmap(er.pic);
+		}
+	}
+
+	protected void setWdsImgDsc(String dsc)
+	{
+		txtWdsImgDsc.setText(dsc);
+	}
+
+	protected void setWdsImgPic(String ph)
+	{
+		imgWdsImgPic.setImageBitmap(BitmapFactory.decodeFile(ph));
 	}
 
 	@Override

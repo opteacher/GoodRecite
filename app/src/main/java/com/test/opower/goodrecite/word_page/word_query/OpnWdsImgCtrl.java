@@ -19,19 +19,20 @@ import java.util.List;
 /**
  * Created by opower on 16-7-19.
  */
-public class OpenWdsImgCtrl extends ViewCtrl
+public class OpnWdsImgCtrl extends ViewCtrl
 {
 	private String word = "";
 	private static final int ADD_WDS_IMG = 0;
 	private static final int SEL_WDS_IMG = 1;
 	private static final int MNG_WDS_IMG = 2;
 
-	private OpenWdsImgCtrl(BaseActivity act)
+	private OpnWdsImgCtrl(BaseActivity act)
 	{
 		super(act);
 
 		LnkGrpDlgBuilder.ini(act);
 		EdtWdsImgCtrl.ini(act);
+		SelWdsImgCtrl.ini(act);
 	}
 
 	public static class DlgCrtePam
@@ -100,7 +101,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 		Dialog dlg = LnkGrpDlgBuilder.ins().getDlg();
 		if(dlg != null && dlg.isShowing())
 		{
-			dlg.dismiss();
+			dlg.cancel();
 		}
 	}
 
@@ -123,6 +124,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 							EdtWdsImgCtrl.ins().toCurFragment(word);
 							break;
 						case SEL_WDS_IMG:
+							SelWdsImgCtrl.ins().toCurFragment(word);
 							break;
 						case MNG_WDS_IMG:
 							break;
@@ -131,10 +133,10 @@ public class OpenWdsImgCtrl extends ViewCtrl
 				});
 	}
 
-	private static OpenWdsImgCtrl instance = null;
-	public static OpenWdsImgCtrl ini(BaseActivity act)
+	private static OpnWdsImgCtrl instance = null;
+	public static OpnWdsImgCtrl ini(BaseActivity act)
 	{
-		instance = new OpenWdsImgCtrl(act);	return instance;
+		instance = new OpnWdsImgCtrl(act);	return instance;
 	}
-	public static OpenWdsImgCtrl ins()	{ return instance; }
+	public static OpnWdsImgCtrl ins()	{ return instance; }
 }

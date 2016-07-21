@@ -29,6 +29,7 @@ public class DBMdl
 	public static final int SELECT_WORD_NEAR = 14;
 	public static final int SELECT_WORD_DETAIL = 15;
 	public static final int INSERT_WORD_IMAGE = 16;
+	public static final int SELECT_CURRENT_WORD_IMG = 17;
 
 	private DBMdl()
 	{
@@ -49,6 +50,7 @@ public class DBMdl
 		dbOpnTbl.put(SELECT_WORD_NEAR, DBOpnSelWdsNear.ins());
 		dbOpnTbl.put(SELECT_WORD_DETAIL, DBOpnSelWdsDtl.ins());
 		dbOpnTbl.put(INSERT_WORD_IMAGE, DBOpnIstWdsImg.ins());
+		dbOpnTbl.put(SELECT_CURRENT_WORD_IMG, DBOpnSelCurWdsImg.ins());
 	}
 	private static DBMdl instance = new DBMdl();
 	public static DBMdl ins()	{ return instance; }
