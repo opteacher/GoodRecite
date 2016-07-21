@@ -18,6 +18,7 @@
 	<string name="wng_no_wds_imp_rcd">没有查询到单词重要度的记录</string>
 	<string name="wng_no_wds_example">没有查询到指定单词的例句</string>
 	<string name="wng_no_wds_rcd">没有找到该单词的词典信息</string>
+	<string name="wng_no_wds_txt_img_dsc">没有指定单词的文字联想描述</string>
 	<string name="err_not_rgt_cls">系统异常：类型配对错误</string>
 	<string name="err_no_such_opn">系统异常：没有对应的DB操作</string>
 	<string name="err_db_exe">系统异常：数据库操作错误</string>

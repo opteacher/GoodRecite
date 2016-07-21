@@ -31,6 +31,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 		super(act);
 
 		LnkGrpDlgBuilder.ini(act);
+		EdtWdsImgCtrl.ini(act);
 	}
 
 	public static class DlgCrtePam
@@ -119,7 +120,7 @@ public class OpenWdsImgCtrl extends ViewCtrl
 						switch ((Integer) view.getTag())
 						{
 						case ADD_WDS_IMG:
-
+							EdtWdsImgCtrl.ins().toCurFragment(word);
 							break;
 						case SEL_WDS_IMG:
 							break;

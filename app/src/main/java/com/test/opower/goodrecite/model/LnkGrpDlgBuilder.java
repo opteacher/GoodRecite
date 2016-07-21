@@ -86,10 +86,15 @@ public class LnkGrpDlgBuilder extends PopUpDlgBuilder
 		{
 			dlg = new Dialog(context, R.style.PopupDlgTheme);
 		}
+
 		//设置对话框内容
 		dlg.setContentView(lvwDlgLst);
+
 		//调整对话框
 		adjustDlgSize();
+
+		//调用控制器绑定控件触发事件
+		ctrl.bindMainContent(dlg.getWindow().getDecorView());
 
 		return dlg;
 	}

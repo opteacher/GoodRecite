@@ -22,6 +22,7 @@ public class ExitWdsTstBuilder extends ConfirmBuilder
 		super(context);
 
 		txtExitTst = new TextView(context);
+		txtExitTst.setBackgroundResource(android.R.color.white);
 		txtExitTst.setLayoutParams(new ViewGroup.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT));
